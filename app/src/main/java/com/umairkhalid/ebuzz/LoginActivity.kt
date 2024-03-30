@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.UnderlineSpan
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.LinearLayout
@@ -20,6 +23,10 @@ class LoginActivity : AppCompatActivity() {
         val forgotPass=findViewById<TextView>(R.id.login_forgot_txt)
         val login_btn=findViewById<Button>(R.id.login_login_btn)
         val signup_btn=findViewById<Button>(R.id.login_signup_btn)
+
+        val spannableString = SpannableString("Forgot Your Password?")
+        spannableString.setSpan(UnderlineSpan(), 0, spannableString.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        forgotPass.text = spannableString
 
         login_btn.setOnClickListener{
             val intent = Intent(this, HomePageActivity::class.java)

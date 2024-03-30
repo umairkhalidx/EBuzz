@@ -6,9 +6,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.style.UnderlineSpan
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.AdapterView
@@ -16,67 +13,34 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
 import com.airbnb.lottie.LottieAnimationView
 import java.util.Calendar
 
-class SignupActivity : AppCompatActivity() {
+class EditProfileActivity : AppCompatActivity() {
 
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        setContentView(R.layout.activity_edit_profile)
 
-        val layout1=findViewById<LinearLayout>(R.id.signup_layout1)
-        val layout2=findViewById<LinearLayout>(R.id.signup_layout2)
-        val layout3=findViewById<LinearLayout>(R.id.signup_layout3)
-        layout2.visibility = View.GONE
-        layout3.visibility = View.GONE
-
-        val animation=findViewById<LottieAnimationView>(R.id.signup_animation)
-        animation.playAnimation()
+        val name=findViewById<EditText>(R.id.editprofile_name_txt)
+        val contact=findViewById<EditText>(R.id.editprofile_contact_txt)
+        val country_spinner=findViewById<Spinner>(R.id.editprofile_country_spinner)
+        val province_spinner=findViewById<Spinner>(R.id.editprofile_province_spinner)
+        val age=findViewById<TextView>(R.id.editprofile_age_txt)
+        val upload_btn=findViewById<Button>(R.id.editprofile_upload_btn)
+        val editprofile_layout=findViewById<LinearLayout>(R.id.editprofile_layout)
+        val back_btn=findViewById<ImageButton>(R.id.editprofile_back_btn)
 
         val slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up_layout)
-        layout1.startAnimation(slideUp)
+        editprofile_layout.startAnimation(slideUp)
 
-        //Layout 1 Variables
-        val next_btn=findViewById<Button>(R.id.signup_layout1_nextbtn)
-        val name=findViewById<EditText>(R.id.signup_name_txt)
-        val email=findViewById<EditText>(R.id.signup_email_txt)
-        val password=findViewById<EditText>(R.id.signup_password_txt)
-        val confirmPass=findViewById<EditText>(R.id.signup_confirm_pass_txt)
-        val login_txt_1=findViewById<TextView>(R.id.signup_login_txt_1)
-
-        val spannableString = SpannableString("Log in")
-        spannableString.setSpan(UnderlineSpan(), 0, spannableString.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        login_txt_1.text = spannableString
-
-
-        next_btn.setOnClickListener{
-            layout1.visibility = View.GONE
-            layout2.visibility = View.VISIBLE
-            layout3.visibility = View.VISIBLE
-            val slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up_layout)
-            layout2.startAnimation(slideUp)
-        }
-
-        login_txt_1.setOnClickListener{
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        //Layout 2 Variables
-
-        val signup_btn=findViewById<Button>(R.id.signup_layout1_signupbtn)
-        val contact=findViewById<EditText>(R.id.signup_contact_txt)
-        val country_spinner=findViewById<Spinner>(R.id.signup_country_spinner)
-        val province_spinner=findViewById<Spinner>(R.id.signup_province_spinner)
-        val age=findViewById<TextView>(R.id.signup_age_txt)
-        val login_txt_2=findViewById<TextView>(R.id.signup_login_txt_2)
 
         province_spinner.prompt = "Select Province"
         val provinces = arrayOf("Select Province","Punjab", "Sindh", "Balochistan",
@@ -113,20 +77,16 @@ class SignupActivity : AppCompatActivity() {
             }
         }
 
-        val spannableString_2 = SpannableString("Log in")
-        spannableString_2.setSpan(UnderlineSpan(), 0, spannableString_2.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        login_txt_2.text = spannableString_2
-
-
-        signup_btn.setOnClickListener{
-            val intent = Intent(this, LoginActivity::class.java)
+        upload_btn.setOnClickListener{
+            val intent = Intent(this, HomePageActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        login_txt_2.setOnClickListener{
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+        back_btn.setOnClickListener{
+//            val intent = Intent(this, HomePageActivity::class.java)
+//            startActivity(intent)
+            onBackPressed()
             finish()
         }
 
@@ -137,7 +97,7 @@ class SignupActivity : AppCompatActivity() {
             val day = cal.get(Calendar.DAY_OF_MONTH)
 
             val dialog = DatePickerDialog(
-                this@SignupActivity,
+                this@EditProfileActivity,
                 android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                 mDateSetListener,
                 year,

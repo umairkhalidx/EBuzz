@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
+    android:background="#FFFFE0"
     >
 
     <LinearLayout
@@ -30,43 +31,42 @@
 
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/signup_layout1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="70"
-        android:orientation="vertical"
+        android:background="#FFC000"
         android:gravity="top"
-        android:background="#FFC000">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#070707"
-            android:text="Get Started!"
-            android:textSize="32dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="6dp"
-            android:textStyle="bold"
-            >
+            android:text="Get Started!"
+            android:textColor="#070707"
+            android:textSize="32dp"
+            android:textStyle="bold">
+
         </TextView>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#070707"
-            />
+            android:background="#070707" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:textColor="@color/white"
-            android:text="Name"
-            android:textSize="16dp"
             android:layout_marginTop="22dp"
-            >
+            android:text="Name"
+            android:textColor="@color/white"
+            android:textSize="16dp">
 
         </TextView>
 
@@ -74,14 +74,13 @@
             android:id="@+id/signup_name_txt"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            android:background="@drawable/textbox_round_corners"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/textbox_round_corners"
             android:hint="Enter Name"
-            android:paddingLeft="12dp"
-            >
+            android:paddingLeft="12dp">
 
         </EditText>
 
@@ -89,10 +88,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:textColor="@color/white"
             android:text="Email"
-            android:textSize="16dp"
-            >
+            android:textColor="@color/white"
+            android:textSize="16dp">
 
         </TextView>
 
@@ -100,14 +98,13 @@
             android:id="@+id/signup_email_txt"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            android:background="@drawable/textbox_round_corners"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/textbox_round_corners"
             android:hint="Enter Email"
-            android:paddingLeft="12dp"
-            >
+            android:paddingLeft="12dp">
 
         </EditText>
 
@@ -138,13 +135,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password must be at least 8 characters long"
-            android:textColor="@color/white"
             android:layout_gravity="left"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="30dp"
-            android:textSize="14dp"
-            />
+            android:text="Password must be at least 8 characters long"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/signup_confirm_pass_txt"
@@ -159,6 +155,7 @@
             android:paddingLeft="12dp">
 
         </EditText>
+
         <Button
             android:id="@+id/signup_layout1_nextbtn"
             android:layout_width="150dp"
@@ -168,10 +165,9 @@
             android:backgroundTint="@color/white"
             android:text="Next"
             android:textColor="#070707"
-            app:cornerRadius="8dp"
-            android:textStyle="bold"
             android:textSize="16dp"
-            >
+            android:textStyle="bold"
+            app:cornerRadius="8dp">
 
         </Button>
 
@@ -179,36 +175,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_marginTop="10dp"
-            >
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account?  "
-                android:textColor="@color/white"
-                >
-            </TextView>
+                android:textColor="@color/white"></TextView>
 
             <TextView
                 android:id="@+id/signup_login_txt_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Log in"
-                android:textColor="#070707"
                 android:clickable="true"
-                />
+                android:text="Log in"
+                android:textColor="#070707" />
 
         </LinearLayout>
 
     </LinearLayout>
-
-
-
-
-
-
 
     <LinearLayout
         android:id="@+id/signup_layout3"
@@ -265,7 +252,7 @@
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
             android:layout_marginRight="30dp"
-            android:hint="Enter Contact"
+            android:hint="+92 1234567890"
             android:paddingLeft="12dp"
             >
 
@@ -298,14 +285,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:textColor="@color/white"
-            android:text="City"
+            android:text="Province"
             android:textSize="16dp"
             >
 
         </TextView>
 
         <Spinner
-            android:id="@+id/signup_city_spinner"
+            android:id="@+id/signup_province_spinner"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="@drawable/textbox_round_corners"
@@ -326,7 +313,7 @@
 
         </TextView>
 
-        <EditText
+        <TextView
             android:id="@+id/signup_age_txt"
             android:layout_width="match_parent"
             android:layout_height="36dp"
@@ -335,11 +322,15 @@
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
             android:layout_marginRight="30dp"
-            android:hint="Enter Your Age"
+            android:text="Enter Your age"
+            android:textColor="#918c8c"
+            android:paddingTop="4dp"
+            android:textSize="18sp"
             android:paddingLeft="12dp"
+            android:clickable="true"
             >
 
-        </EditText>
+        </TextView>
 
 
         <Button

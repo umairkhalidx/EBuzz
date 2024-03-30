@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val animation=findViewById<LottieAnimationView>(R.id.login_loading_animation)
         animation.playAnimation()
 
