@@ -1,29 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePageActivity">
+    tools:context=".HomePageActivity"
+    android:orientation="vertical"
+    android:background="#FFFFE0"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, "
+            android:fontFamily="@font/balsamiqsans_bold"
+            android:textSize="32dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#070707"
+            >
+
+        </TextView>
+        <TextView
+            android:id="@+id/homepage_username_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            android:fontFamily="@font/balsamiqsans_bold"
+            android:textSize="32dp"
+            android:textColor="#FFC000"
+            >
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We hope you like our new app, Team@Ebuzz"
+            android:fontFamily="@font/balsamiqsans_bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#070707"
+            >
+
+        </TextView>
+
+<!--        android:text="Warm and Kind Greating form Team @Ebuzz"-->
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:id="@+id/homepage_notification_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#070707"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:text="Notifications"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:clickable="true"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/homepage_groups_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#FFC000"
+                    android:textColor="#070707"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:text="Groups"
+                    android:clickable="true"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/homepage_pages_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#FFC000"
+                    android:textColor="#070707"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:text="Pages"
+                    android:clickable="true"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/homepage_people_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#FFC000"
+                    android:textColor="#070707"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:text="People"
+                    android:layout_marginRight="10dp"
+                    android:clickable="true"
+                    >
+                </Button>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/button"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:text="Edit Profile"
         >
 
     </Button>
 
     <Button
+        android:id="@+id/button_1"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:text="My Profile"
+        >
+
+    </Button>
+
+
+    <Button
         android:id="@+id/button_2"
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:text="Notifications"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        >
 
     </Button>
 
@@ -32,9 +175,8 @@
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:text="Chats"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_2">
+        >
 
     </Button>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

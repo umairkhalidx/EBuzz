@@ -23,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
         val forgotPass=findViewById<TextView>(R.id.login_forgot_txt)
         val login_btn=findViewById<Button>(R.id.login_login_btn)
         val signup_btn=findViewById<Button>(R.id.login_signup_btn)
+        val guest_btn=findViewById<Button>(R.id.login_guest_btn)
 
         val spannableString = SpannableString("Forgot Your Password?")
         spannableString.setSpan(UnderlineSpan(), 0, spannableString.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
@@ -33,6 +34,13 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        guest_btn.setOnClickListener{
+            val intent = Intent(this, HomePageActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         signup_btn.setOnClickListener{
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
