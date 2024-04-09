@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFE0"
+    android:weightSum="100"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardCornerRadius="34dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="#FFC000"
+        android:layout_marginTop="-28dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                >
+
+                <ImageButton
+                    android:id="@+id/aboutme_back_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/back_arrow"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="About Me"
+                    android:textColor="#070707"
+                    android:textSize="26dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Here you can change your current Bio that\nwill be visible to all other users."
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="12dp"
+                >
+            </TextView>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:id="@+id/aboutme_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        >
+
+        <EditText
+            android:id="@+id/aboutme_txt"
+            android:layout_width="330dp"
+            android:layout_height="110dp"
+            android:background="@drawable/textbox_round_aboutme"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:hint="Tell others about yourself"
+            android:gravity="top"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            >
+
+        </EditText>
+
+
+        <Button
+            android:id="@+id/aboutme_update_btn"
+            android:layout_width="230dp"
+            android:layout_height="54dp"
+            android:backgroundTint="#070707"
+            android:text="Update Bio"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"
+            >
+
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

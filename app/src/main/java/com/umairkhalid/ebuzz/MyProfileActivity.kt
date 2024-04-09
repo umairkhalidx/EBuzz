@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 class MyProfileActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_profile)
@@ -20,12 +21,41 @@ class MyProfileActivity : AppCompatActivity() {
         val friends_list_btn = findViewById<Button>(R.id.myprofile_friends_list_btn)
         val user_img = findViewById<ImageView>(R.id.myprofile_user_img)
         val cover_img =findViewById<ImageView>(R.id.myprofile_cover_img)
+        val requests_btn = findViewById<Button>(R.id.myprofile_requests_btn)
+        val settings_btn = findViewById<Button>(R.id.myprofile_settings_btn)
+        val aboutme_btn = findViewById<Button>(R.id.myprofile_aboutme_btn)
+        val abooutme_txt =findViewById<TextView>(R.id.myprofile_aboutme_txt)
 
         back_btn.setOnClickListener{
 //            val intent = Intent(this, LoginActivity::class.java)
 //            startActivity(intent)
             onBackPressed()
             finish()
+        }
+
+        edit_btn.setOnClickListener{
+            val intent = Intent(this, EditProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+        settings_btn.setOnClickListener{
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        requests_btn.setOnClickListener{
+            val intent = Intent(this, RequestsActivity::class.java)
+            startActivity(intent)
+        }
+
+        aboutme_btn.setOnClickListener{
+            val intent = Intent(this, AboutMeActivity::class.java)
+            startActivity(intent)
+        }
+
+        friends_list_btn.setOnClickListener{
+            val intent = Intent(this, FriendsListActivity::class.java)
+            startActivity(intent)
         }
 
     }

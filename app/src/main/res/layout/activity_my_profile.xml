@@ -183,4 +183,116 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                >
+<!--                <Button-->
+<!--                    android:id="@+id/myprofile_notification_btn"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    app:cornerRadius="6dp"-->
+<!--                    android:backgroundTint="#070707"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:textSize="14dp"-->
+<!--                    android:text="Settings"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingRight="10dp"-->
+<!--                    android:clickable="true"-->
+<!--                    >-->
+<!--                </Button>-->
+
+                <Button
+                    android:id="@+id/myprofile_settings_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#070707"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:text="Settings"
+                    android:clickable="true"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/myprofile_aboutme_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#FFC000"
+                    android:textColor="#070707"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:text="About Me"
+                    android:clickable="true"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/myprofile_requests_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#FFC000"
+                    android:textColor="#070707"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:text="Requests"
+                    android:clickable="true"
+                    >
+                </Button>
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About Me:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#070707"
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/myprofile_aboutme_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="62dp"
+            android:text="This is my about section"
+            android:layout_marginTop="4dp"
+            >
+
+        </TextView>
+    </LinearLayout>
+
 </LinearLayout>

@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         guest_btn.setOnClickListener{
-            val intent = Intent(this, HomePageActivity::class.java)
+            val intent = Intent(this, GuestLoginActivity::class.java)
             startActivity(intent)
             finish()
         }

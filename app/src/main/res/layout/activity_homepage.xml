@@ -93,6 +93,20 @@
                 </Button>
 
                 <Button
+                    android:id="@+id/homepage_requests_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#FFC000"
+                    android:textColor="#070707"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:text="Requests"
+                    android:clickable="true"
+                    >
+                </Button>
+
+                <Button
                     android:id="@+id/homepage_groups_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
@@ -116,20 +130,6 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="14dp"
                     android:text="Pages"
-                    android:clickable="true"
-                    >
-                </Button>
-
-                <Button
-                    android:id="@+id/homepage_people_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    app:cornerRadius="6dp"
-                    android:backgroundTint="#FFC000"
-                    android:textColor="#070707"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="14dp"
-                    android:text="People"
                     android:layout_marginRight="10dp"
                     android:clickable="true"
                     >
@@ -146,7 +146,7 @@
         android:id="@+id/button"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:text="Edit Profile"
+        android:text="Chat 1"
         >
 
     </Button>
@@ -165,7 +165,7 @@
         android:id="@+id/button_2"
         android:layout_width="150dp"
         android:layout_height="80dp"
-        android:text="Notifications"
+        android:text="Chat 2"
         >
 
     </Button>

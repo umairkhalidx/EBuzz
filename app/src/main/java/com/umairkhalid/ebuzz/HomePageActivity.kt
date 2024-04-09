@@ -12,9 +12,9 @@ class HomePageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_homepage)
 
         val notifications_btn = findViewById<Button>(R.id.homepage_notification_btn)
-        val groups_btn = findViewById<Button>(R.id.homepage_groups_btn)
+        val requests_btn = findViewById<Button>(R.id.homepage_requests_btn)
         val pages_btn = findViewById<Button>(R.id.homepage_pages_btn)
-        val people_btn = findViewById<Button>(R.id.homepage_people_btn)
+        val groups_btn = findViewById<Button>(R.id.homepage_groups_btn)
         val username =findViewById<TextView>(R.id.homepage_username_txt)
 
         notifications_btn.setOnClickListener{
@@ -23,10 +23,15 @@ class HomePageActivity : AppCompatActivity() {
 //            finish()
         }
 
+        requests_btn.setOnClickListener{
+            val intent = Intent(this, RequestsActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val btn=findViewById<Button>(R.id.button)
         btn.setOnClickListener{
-            val intent = Intent(this, EditProfileActivity::class.java)
+            val intent = Intent(this, MessagingActivity::class.java)
             startActivity(intent)
 //            finish()
         }
@@ -40,7 +45,7 @@ class HomePageActivity : AppCompatActivity() {
 
         val btn_2=findViewById<Button>(R.id.button_2)
         btn_2.setOnClickListener{
-            val intent = Intent(this, NotificationsActivity::class.java)
+            val intent = Intent(this, GroupMessagingActivity::class.java)
             startActivity(intent)
 //            finish()
         }
