@@ -75,7 +75,6 @@ class SettingsActivity : AppCompatActivity() {
                 }
             }
 
-
             val profilecategory_spinner = dialogView.findViewById<Spinner>(R.id.settingsmenu_profile_category)
             profilecategory_spinner.prompt = "Select Profile Category"
             val categories = arrayOf("Select Profile Category", "Creator", "Educator", "Entertainer","Influencer")
