@@ -28,5 +28,10 @@ class FeedbackActivity : AppCompatActivity() {
             onBackPressed()
             finish()
         }
+
+        submit_btn.setOnClickListener{
+            onBackPressed()
+            finish()
+        }
     }
 }
