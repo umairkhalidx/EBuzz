@@ -10,12 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
+        app:cardElevation="6dp"
         android:backgroundTint="@color/white"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="20dp"
         android:foreground="@drawable/textbox_round_recycleview"
         >
 
@@ -58,16 +58,33 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
+                    android:id="@+id/post_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_toEndOf="@+id/cardView3"
+                    android:text="\@"
+                    android:textColor="#070707"
+                    android:textSize="22dp"
+                    android:fontFamily="@font/salsa_regular"
+                    >
+
+                </TextView>
+
+                <TextView
                     android:id="@+id/post_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_toEndOf="@+id/cardView3"
+                    android:layout_marginStart="1dp"
+                    android:layout_toEndOf="@+id/post_a"
                     android:text="Username"
                     android:textColor="#070707"
                     android:textSize="20dp"
+                    android:fontFamily="@font/salsa_regular"
                     >
 
                 </TextView>
@@ -116,7 +133,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="360dp"
+                    android:layout_height="350dp"
                     app:cardCornerRadius="0dp"
                     app:cardElevation="0dp"
                     >
@@ -163,7 +180,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="8dp"
                 >
 
                 <TextView

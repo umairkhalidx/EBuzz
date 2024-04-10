@@ -55,6 +55,11 @@ class HomePageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        search_btn.setOnClickListener{
+            val intent = Intent(this, Search1Activity::class.java)
+            startActivity(intent)
+        }
+
 
         var adapter_data_list : ArrayList<recycleview_post_data> = ArrayList()
 

@@ -31,7 +31,7 @@
                 android:layout_marginTop="70dp"
                 >
                 <ImageButton
-                    android:id="@+id/chats_back_btn"
+                    android:id="@+id/search_back_btn"
                     android:layout_width="50dp"
                     android:layout_height="60dp"
                     android:src="@drawable/back_arrow"
@@ -42,7 +42,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Messaging"
+                    android:text="Search"
                     android:textSize="28dp"
                     android:textColor="#070707"
                     android:textStyle="bold"
@@ -50,17 +50,6 @@
                     android:layout_marginLeft="20dp"
                     >
                 </TextView>
-
-                <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="56dp"
-                    android:layout_gravity="center"
-                    app:cornerRadius="30dp"
-                    android:backgroundTint="@android:color/transparent"
-                    android:src="@drawable/chat_icon"
-                    android:layout_marginTop="4dp"
-                    >
-                </ImageButton>
 
             </LinearLayout>
 
@@ -71,7 +60,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Interact with other to enjoy the full\nSocial Experience."
+                    android:text="Search here to start socializing and look\nfor your favourite creators"
                     android:textSize="16dp"
                     android:textColor="@color/black"
                     android:layout_marginLeft="60dp"
@@ -90,7 +79,7 @@
                 android:layout_below="@+id/lets_find"
                 >
                 <ImageButton
-                    android:id="@+id/chats_searchbar_btn"
+                    android:id="@+id/search_searchbar_btn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/search_icon"
@@ -100,7 +89,7 @@
                 </ImageButton>
 
                 <EditText
-                    android:id="@+id/chats_searchbar_txt"
+                    android:id="@+id/search_searchbar_txt"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
                     android:background="@drawable/textbox_round_yellow_no_left"
@@ -126,7 +115,7 @@
         >
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/chats_recycleview"
+            android:id="@+id/search_recycleview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
