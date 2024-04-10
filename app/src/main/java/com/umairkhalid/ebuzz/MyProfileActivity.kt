@@ -71,12 +71,10 @@ class MyProfileActivity : AppCompatActivity() {
         val v1  = recycleview_post_data("","Username","","","","",0,0)
         val v2  = recycleview_post_data("","Username","","","","",0,0)
         val v3  = recycleview_post_data("","Username","","","","",0,0)
-        val v4  = recycleview_post_data("","Username","","","","",0,0)
 
         adapter_data_list.add(v1)
         adapter_data_list.add(v2)
         adapter_data_list.add(v3)
-        adapter_data_list.add(v4)
 
 
         // 3- Adapter

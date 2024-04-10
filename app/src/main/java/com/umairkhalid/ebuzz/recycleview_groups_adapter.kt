@@ -21,8 +21,8 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
         lateinit var groupname_2 : TextView
         var index : Int = 0
 
-        val viewmore_btn_1 : Button = itemView.findViewById(R.id.groups_viewmore_1)
-        val viewmore_btn_2 : Button = itemView.findViewById(R.id.groups_viewmore_2)
+        val leavegroup_btn_1 : Button = itemView.findViewById(R.id.groups_leave_btn_1)
+        val leavegroup_btn_2 : Button = itemView.findViewById(R.id.groups_leave_btn_2)
 
         init {
             group_layout_1 = itemView.findViewById(R.id.groups_layout_1)
@@ -60,21 +60,45 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
         if(holder.index==1) {
             holder.groupname_1.setText(itemslist[position].groupname_1)
             holder.group_layout_2.visibility=View.INVISIBLE
-
-            holder.viewmore_btn_1.setOnClickListener{
+//
+//            holder.leavegroup_btn_1.setOnClickListener{
+//                listener.onCLick_fun(position,"")
+//            }
+            holder.group_img_1.setOnClickListener{
                 listener.onCLick_fun(position,"")
             }
+            holder.groupname_1.setOnClickListener{
+                listener.onCLick_fun(position,"")
+            }
+
 
         }else{
             holder.groupname_1.setText(itemslist[position].groupname_1)
             holder.groupname_2.setText(itemslist[position].groupname_2)
 
-            holder.viewmore_btn_1.setOnClickListener{
+//            holder.leavegroup_btn_1.setOnClickListener{
+//                listener.onCLick_fun(position,"")
+//            }
+//            holder.leavegroup_btn_2.setOnClickListener{
+//                listener.onCLick_fun(position,"")
+//            }
+
+            holder.group_img_1.setOnClickListener{
                 listener.onCLick_fun(position,"")
             }
-            holder.viewmore_btn_2.setOnClickListener{
+
+            holder.group_img_2.setOnClickListener{
                 listener.onCLick_fun(position,"")
             }
+
+            holder.groupname_1.setOnClickListener{
+                listener.onCLick_fun(position,"")
+            }
+
+            holder.groupname_2.setOnClickListener{
+                listener.onCLick_fun(position,"")
+            }
+
         }
 
     }

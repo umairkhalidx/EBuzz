@@ -116,7 +116,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="260dp"
+                    android:layout_height="360dp"
                     app:cardCornerRadius="0dp"
                     app:cardElevation="0dp"
                     >
@@ -125,8 +125,9 @@
                         android:id="@+id/post_image_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@mipmap/john_cooper"
+                        android:src="@drawable/john_cooper"
                         android:background="@color/black"
+                        android:scaleType="centerCrop"
                         >
                     </ImageView>
 

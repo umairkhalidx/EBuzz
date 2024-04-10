@@ -73,7 +73,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@+id/cardView"
                     android:layout_marginTop="1dp"
-                    android:text="Username"
+                    android:text="Groupname"
                     android:textColor="#070707"
                     android:textSize="18dp"
                     android:layout_marginBottom="4dp"

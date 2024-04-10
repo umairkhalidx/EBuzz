@@ -36,6 +36,11 @@ class HomePageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        pages_btn.setOnClickListener{
+            val intent = Intent(this, PagesActivity::class.java)
+            startActivity(intent)
+        }
+
         val search_btn =findViewById<ImageButton>(R.id.homepage_search_btn)
         val chats_btn =findViewById<ImageButton>(R.id.homepage_chat_btn)
         val profile_btn =findViewById<ImageButton>(R.id.homepage_profile_btn)

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.EBuzz"
         tools:targetApi="31">
         <activity
+            android:name=".PublicPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PagesActivity"
+            android:exported="false" />
+        <activity
             android:name=".GroupsActivity"
             android:exported="false" />
         <activity
