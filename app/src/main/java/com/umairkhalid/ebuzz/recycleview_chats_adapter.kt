@@ -3,14 +3,17 @@ package com.umairkhalid.ebuzz
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class recycleview_chats_adapter (val itemslist: ArrayList<recycleview_chats_data>)
+class recycleview_chats_adapter (val itemslist: ArrayList<recycleview_chats_data>,private val listener: ClickListner)
     : RecyclerView.Adapter<recycleview_chats_adapter.chats_recycler_viewholder>()
 {
     inner class chats_recycler_viewholder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val rootView: View = itemView
         lateinit var user_img : ImageView
         lateinit var username : TextView
 
@@ -39,6 +42,10 @@ class recycleview_chats_adapter (val itemslist: ArrayList<recycleview_chats_data
 //            .load(itemslist[position].img)
 //            .into(holder.display_pic)
         holder.username.setText(itemslist[position].username)
+
+        holder.rootView.setOnClickListener{
+            listener.onCLick_fun(position,"")
+        }
 
     }
 }

@@ -35,10 +35,13 @@ class NotificationsActivity : AppCompatActivity() {
         val v1  = recycleview_notifications_data("","You have recieved one new notification.")
         val v2  = recycleview_notifications_data("","You have recieved one new notification.")
         val v3  = recycleview_notifications_data("","You have recieved one new notification.")
+        val v4  = recycleview_notifications_data("","You have recieved one new notification.")
 
         adapter_data_list.add(v1)
         adapter_data_list.add(v2)
         adapter_data_list.add(v3)
+        adapter_data_list.add(v4)
+
 
         // 3- Adapter
         val adapter = recycleview_notifications_adapter(adapter_data_list)

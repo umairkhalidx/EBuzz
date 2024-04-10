@@ -4,7 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class HomePageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,34 +31,75 @@ class HomePageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        val btn=findViewById<Button>(R.id.button)
-        btn.setOnClickListener{
-            val intent = Intent(this, MessagingActivity::class.java)
+        groups_btn.setOnClickListener{
+            val intent = Intent(this, GroupsActivity::class.java)
             startActivity(intent)
-//            finish()
         }
 
-        val btn_1=findViewById<Button>(R.id.button_1)
-        btn_1.setOnClickListener{
-            val intent = Intent(this, MyProfileActivity::class.java)
-            startActivity(intent)
-//            finish()
-        }
+        val search_btn =findViewById<ImageButton>(R.id.homepage_search_btn)
+        val chats_btn =findViewById<ImageButton>(R.id.homepage_chat_btn)
+        val profile_btn =findViewById<ImageButton>(R.id.homepage_profile_btn)
 
-        val btn_2=findViewById<Button>(R.id.button_2)
-        btn_2.setOnClickListener{
-            val intent = Intent(this, GroupMessagingActivity::class.java)
-            startActivity(intent)
-//            finish()
-        }
-
-        val btn_3=findViewById<Button>(R.id.button_3)
-        btn_3.setOnClickListener{
+        chats_btn.setOnClickListener{
             val intent = Intent(this, ChatsActivity::class.java)
             startActivity(intent)
-//            finish()
         }
+
+        profile_btn.setOnClickListener{
+            val intent = Intent(this, MyProfileActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        var adapter_data_list : ArrayList<recycleview_post_data> = ArrayList()
+
+        val recyclerView : RecyclerView = findViewById(R.id.homepage_recyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(this,
+            LinearLayoutManager.VERTICAL,
+            false
+        )
+
+        val v1  = recycleview_post_data("","John Doe.","","","","",0,0)
+        val v2  = recycleview_post_data("","Emma Phillips.","","","","",0,0)
+        val v3  = recycleview_post_data("","Jack Watson.","","","","",0,0)
+
+        adapter_data_list.add(v1)
+        adapter_data_list.add(v2)
+        adapter_data_list.add(v3)
+
+        // 3- Adapter
+        val adapter = recycleview_post_adapter(adapter_data_list)
+        recyclerView.adapter = adapter
+
+
+//
+//        val btn=findViewById<Button>(R.id.button)
+//        btn.setOnClickListener{
+//            val intent = Intent(this, MessagingActivity::class.java)
+//            startActivity(intent)
+////            finish()
+//        }
+//
+//        val btn_1=findViewById<Button>(R.id.button_1)
+//        btn_1.setOnClickListener{
+//            val intent = Intent(this, MyProfileActivity::class.java)
+//            startActivity(intent)
+////            finish()
+//        }
+//
+//        val btn_2=findViewById<Button>(R.id.button_2)
+//        btn_2.setOnClickListener{
+//            val intent = Intent(this, GroupMessagingActivity::class.java)
+//            startActivity(intent)
+////            finish()
+//        }
+//
+//        val btn_3=findViewById<Button>(R.id.button_3)
+//        btn_3.setOnClickListener{
+//            val intent = Intent(this, ChatsActivity::class.java)
+//            startActivity(intent)
+////            finish()
+//        }
 
     }
 }

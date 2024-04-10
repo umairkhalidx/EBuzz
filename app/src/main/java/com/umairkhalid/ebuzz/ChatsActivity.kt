@@ -1,13 +1,15 @@
 package com.umairkhalid.ebuzz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class ChatsActivity : AppCompatActivity() {
+class ChatsActivity : AppCompatActivity(), ClickListner{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chats)
@@ -40,11 +42,17 @@ class ChatsActivity : AppCompatActivity() {
         adapter_data_list.add(v3)
 
         // 3- Adapter
-        val adapter = recycleview_chats_adapter(adapter_data_list)
+        val adapter = recycleview_chats_adapter(adapter_data_list,this)
         recyclerView.adapter = adapter
 
         val slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up_layout)
         recyclerView.startAnimation(slideUp)
+
+    }
+    override fun onCLick_fun(position: Int,username:String){
+
+        val intent = Intent(this, MessagingActivity::class.java)
+        startActivity(intent)
 
     }
 }

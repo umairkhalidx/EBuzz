@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MyProfileActivity : AppCompatActivity() {
 
@@ -57,6 +59,29 @@ class MyProfileActivity : AppCompatActivity() {
             val intent = Intent(this, FriendsListActivity::class.java)
             startActivity(intent)
         }
+
+        var adapter_data_list : ArrayList<recycleview_post_data> = ArrayList()
+
+        val recyclerView : RecyclerView = findViewById(R.id.myprofile_recyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(this,
+            LinearLayoutManager.VERTICAL,
+            false
+        )
+
+        val v1  = recycleview_post_data("","Username","","","","",0,0)
+        val v2  = recycleview_post_data("","Username","","","","",0,0)
+        val v3  = recycleview_post_data("","Username","","","","",0,0)
+        val v4  = recycleview_post_data("","Username","","","","",0,0)
+
+        adapter_data_list.add(v1)
+        adapter_data_list.add(v2)
+        adapter_data_list.add(v3)
+        adapter_data_list.add(v4)
+
+
+        // 3- Adapter
+        val adapter = recycleview_post_adapter(adapter_data_list)
+        recyclerView.adapter = adapter
 
     }
 }
