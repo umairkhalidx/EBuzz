@@ -3,16 +3,19 @@ package com.umairkhalid.ebuzz
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class recycleview_friendslist_adapter(val itemslist: ArrayList<recycleview_friendslist_data>)
+class recycleview_friendslist_adapter(val itemslist: ArrayList<recycleview_friendslist_data>,private val listener: ClickListner)
     : RecyclerView.Adapter<recycleview_friendslist_adapter.friendslist_recycler_viewholder>()
 {
     inner class friendslist_recycler_viewholder(itemView: View) : RecyclerView.ViewHolder(itemView){
         lateinit var user_img : ImageView
         lateinit var username : TextView
+
+        val viewmore_btn = itemView.findViewById<Button>(R.id.friendslist_viewmore_btn)
 
         init {
             user_img= itemView.findViewById(R.id.item_user_img)
@@ -39,6 +42,10 @@ class recycleview_friendslist_adapter(val itemslist: ArrayList<recycleview_frien
 //            .load(itemslist[position].img)
 //            .into(holder.display_pic)
         holder.username.setText(itemslist[position].username)
+
+        holder.viewmore_btn.setOnClickListener{
+            listener.onCLick_fun(position,"",0)
+        }
 
     }
 }

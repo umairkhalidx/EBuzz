@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -44,6 +45,7 @@ class HomePageActivity : AppCompatActivity() {
         val search_btn =findViewById<ImageButton>(R.id.homepage_search_btn)
         val chats_btn =findViewById<ImageButton>(R.id.homepage_chat_btn)
         val profile_btn =findViewById<ImageButton>(R.id.homepage_profile_btn)
+        val add_btn =findViewById<ImageView>(R.id.homepage_add_btn)
 
         chats_btn.setOnClickListener{
             val intent = Intent(this, ChatsActivity::class.java)
@@ -57,6 +59,11 @@ class HomePageActivity : AppCompatActivity() {
 
         search_btn.setOnClickListener{
             val intent = Intent(this, Search1Activity::class.java)
+            startActivity(intent)
+        }
+
+        add_btn.setOnClickListener{
+            val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
 

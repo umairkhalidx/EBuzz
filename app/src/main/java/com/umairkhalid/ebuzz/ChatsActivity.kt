@@ -50,10 +50,16 @@ class ChatsActivity : AppCompatActivity(), ClickListner{
         recyclerView.startAnimation(slideUp)
 
     }
-    override fun onCLick_fun(position: Int,username:String){
+    override fun onCLick_fun(position: Int,username:String,operation:Int)
+    {
+        if(operation==0){
+            val intent = Intent(this, MessagingActivity::class.java)
+            startActivity(intent)
+        }else{
+            val intent = Intent(this, AudioCallActivity::class.java)
+            startActivity(intent)
+        }
 
-        val intent = Intent(this, MessagingActivity::class.java)
-        startActivity(intent)
 
     }
 }

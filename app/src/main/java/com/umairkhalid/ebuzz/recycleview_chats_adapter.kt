@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -16,10 +17,12 @@ class recycleview_chats_adapter (val itemslist: ArrayList<recycleview_chats_data
         val rootView: View = itemView
         lateinit var user_img : ImageView
         lateinit var username : TextView
+        lateinit var audiocall : ImageButton
 
         init {
             user_img= itemView.findViewById(R.id.item_user_img)
             username = itemView.findViewById(R.id.item_username)
+            audiocall=itemView.findViewById(R.id.chats_audiocall_btn)
 
         }
 
@@ -44,7 +47,10 @@ class recycleview_chats_adapter (val itemslist: ArrayList<recycleview_chats_data
         holder.username.setText(itemslist[position].username)
 
         holder.rootView.setOnClickListener{
-            listener.onCLick_fun(position,"")
+            listener.onCLick_fun(position,"",0)
+        }
+        holder.audiocall.setOnClickListener{
+            listener.onCLick_fun(position,"",1)
         }
 
     }

@@ -301,6 +301,7 @@
                 android:layout_height="match_parent"
                 android:background="#070707"
                 android:src="@drawable/add_btn"
+                android:clickable="true"
                 >
 
             </ImageView>

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FFFFE0"
     android:orientation="vertical"
-
     >
 
     <RelativeLayout

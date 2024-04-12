@@ -1,5 +1,5 @@
 package com.umairkhalid.ebuzz
 
 interface ClickListner{
-    fun onCLick_fun(position: Int,username:String)
+    fun onCLick_fun(position: Int,username:String,operation:Int)
 }

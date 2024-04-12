@@ -55,7 +55,8 @@ class GroupsActivity : AppCompatActivity() , ClickListner{
 
     }
 
-    override fun onCLick_fun(position: Int,username:String){
+    override fun onCLick_fun(position: Int,username:String,operation:Int)
+    {
         val intent = Intent(this, GroupMessagingActivity::class.java)
         startActivity(intent)
 

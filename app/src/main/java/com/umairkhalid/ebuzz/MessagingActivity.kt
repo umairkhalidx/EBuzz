@@ -31,6 +31,16 @@ class MessagingActivity : AppCompatActivity() {
             finish()
         }
 
+        audio_call_btn.setOnClickListener{
+            val intent = Intent(this, AudioCallActivity::class.java)
+            startActivity(intent)
+        }
+
+        video_call_btn.setOnClickListener{
+            val intent = Intent(this, VIdeoCallActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }

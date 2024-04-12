@@ -21,8 +21,11 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
         lateinit var groupname_2 : TextView
         var index : Int = 0
 
-        val leavegroup_btn_1 : Button = itemView.findViewById(R.id.groups_leave_btn_1)
-        val leavegroup_btn_2 : Button = itemView.findViewById(R.id.groups_leave_btn_2)
+        lateinit var leavegroup_btn_1 : Button
+        lateinit var leavegroup_btn_2 : Button
+        lateinit var viewmore_btn_1 : Button
+        lateinit var viewmore_btn_2 : Button
+
 
         init {
             group_layout_1 = itemView.findViewById(R.id.groups_layout_1)
@@ -33,6 +36,11 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
             groupname_1= itemView.findViewById(R.id.groups_groupname_1)
             group_img_2= itemView.findViewById(R.id.groups_groupimage_2)
             groupname_2= itemView.findViewById(R.id.groups_groupname_2)
+
+            leavegroup_btn_1 = itemView.findViewById(R.id.groups_leave_btn_1)
+            leavegroup_btn_2 = itemView.findViewById(R.id.groups_leave_btn_2)
+            viewmore_btn_1 = itemView.findViewById(R.id.groups_viewmore_btn_1)
+            viewmore_btn_2 = itemView.findViewById(R.id.groups_viewmore_btn_2)
 
         }
 
@@ -65,10 +73,10 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
 //                listener.onCLick_fun(position,"")
 //            }
             holder.group_img_1.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
             holder.groupname_1.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
 
 
@@ -84,19 +92,27 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
 //            }
 
             holder.group_img_1.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
 
             holder.group_img_2.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
 
             holder.groupname_1.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
 
             holder.groupname_2.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
+            }
+
+            holder.viewmore_btn_1.setOnClickListener{
+                listener.onCLick_fun(position,"",0)
+            }
+
+            holder.viewmore_btn_1.setOnClickListener{
+                listener.onCLick_fun(position,"",0)
             }
 
         }

@@ -63,10 +63,10 @@ class recycleview_pages_adapter (val itemslist: ArrayList<recycleview_pages_data
             holder.pages_layout_2.visibility= View.INVISIBLE
 
             holder.viewmore_btn_1.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
             holder.pages_layout_1.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
 
         }else{
@@ -74,18 +74,18 @@ class recycleview_pages_adapter (val itemslist: ArrayList<recycleview_pages_data
             holder.pagesname_2.setText(itemslist[position].pagename_2)
 
             holder.viewmore_btn_1.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
             holder.viewmore_btn_2.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
 
             holder.pages_layout_1.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
 
             holder.pages_layout_2.setOnClickListener{
-                listener.onCLick_fun(position,"")
+                listener.onCLick_fun(position,"",0)
             }
 
         }
