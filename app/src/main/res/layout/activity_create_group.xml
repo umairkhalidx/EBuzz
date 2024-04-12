@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFE0"
+    android:weightSum="100"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:cardCornerRadius="34dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="#FFC000"
+        android:layout_marginTop="-28dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp"
+                >
+
+                <ImageButton
+                    android:id="@+id/creategroup_back_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/back_arrow"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Create Group"
+                    android:textColor="#070707"
+                    android:textSize="26dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Here you can create your own public\ngroup to interact and share content with\npeople form all around the world."
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_gravity="left"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="12dp"
+                >
+            </TextView>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:id="@+id/creategroup_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Group Name : "
+            android:textSize="16dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="30dp"
+            >
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/creategroup_email_txt"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/textbox_round_yellow"
+            android:hint="Enter your group name"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="6dp"
+            android:paddingLeft="12dp"
+            >
+
+        </EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"
+            android:text="Group Type :"
+            android:textColor="@color/black"
+            android:textSize="16dp">
+
+        </TextView>
+
+        <Spinner
+            android:id="@+id/creategroup_grouptype_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/textbox_round_yellow"
+            android:paddingLeft="12dp">
+
+        </Spinner>
+
+        <EditText
+            android:id="@+id/creategroup_description_txt"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/textbox_round_aboutme"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="Enter you group description"
+            android:gravity="top"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="34dp"
+            >
+
+        </EditText>
+
+        <Button
+            android:id="@+id/creategroup_upload_photo_btn"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="#FFC000"
+            android:text="Upload Photo"
+            android:textColor="#070707"
+            app:cornerRadius="8dp"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            >
+
+        </Button>
+
+        <Button
+            android:id="@+id/creategroup_create_btn"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#070707"
+            android:text="Create Group"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            >
+
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

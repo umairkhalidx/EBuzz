@@ -36,11 +36,13 @@ class AddActivity : AppCompatActivity() {
         }
 
         group_btn.setOnClickListener{
-
+            val intent = Intent(this, CreateGroupActivity::class.java)
+            startActivity(intent)
         }
 
         page_btn.setOnClickListener{
-
+            val intent = Intent(this, CreatePageActivity::class.java)
+            startActivity(intent)
         }
 
 
