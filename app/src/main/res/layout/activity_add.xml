@@ -80,8 +80,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/middleLayout"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginTop="60dp"
         >
 
@@ -89,58 +89,74 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFC000"
-            android:gravity="top"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical">
 
-            <TextView
+<!--            <TextView-->
+<!--                android:id="@+id/add_post_btn"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:layout_marginStart="30dp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:layout_marginEnd="30dp"-->
+<!--                android:background="@drawable/textbox_round_addpost"-->
+<!--                android:gravity="center_horizontal|center_vertical"-->
+<!--                android:text="Upload Post"-->
+<!--                android:textSize="20dp">-->
+
+<!--            </TextView>-->
+
+            <Button
                 android:id="@+id/add_post_btn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="30dp"
+                android:foreground="@drawable/textbox_round_yellow"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/textbox_round_addpost"
-                android:gravity="center_horizontal|center_vertical"
+                android:layout_marginEnd="40dp"
                 android:text="Upload Post"
-                android:textSize="20dp">
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                >
 
-            </TextView>
+            </Button>
 
 
 
-            <TextView
+            <Button
                 android:id="@+id/add_page_btn"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="30dp"
+                android:layout_height="52dp"
+                android:foreground="@drawable/textbox_round_yellow"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/textbox_round_addpost"
-                android:clickable="true"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="Create my own Page"
-                android:textSize="20dp">
+                android:layout_marginEnd="40dp"
+                android:text="Create my Page"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                >
 
-            </TextView>
+            </Button>
 
-            <TextView
+            <Button
                 android:id="@+id/add_group_btn"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginStart="30dp"
+                android:layout_height="52dp"
+                android:foreground="@drawable/textbox_round_yellow"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginBottom="30dp"
-                android:background="@drawable/textbox_round_addpost"
-                android:clickable="true"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="Create my own Group"
-                android:textSize="20dp">
+                android:text="Create my Group"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                >
 
-            </TextView>
+            </Button>
 
 
         </LinearLayout>

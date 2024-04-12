@@ -1,8 +1,10 @@
 package com.umairkhalid.ebuzz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -14,9 +16,9 @@ class AddActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add)
 
         val back_btn = findViewById<ImageButton>(R.id.add_back_btn)
-        val post_btn = findViewById<TextView>(R.id.add_post_btn)
-        val group_btn = findViewById<TextView>(R.id.add_group_btn)
-        val page_btn = findViewById<TextView>(R.id.add_page_btn)
+        val post_btn = findViewById<Button>(R.id.add_post_btn)
+        val group_btn = findViewById<Button>(R.id.add_group_btn)
+        val page_btn = findViewById<Button>(R.id.add_page_btn)
 
         val menu_layout=findViewById<CardView>(R.id.bottomLayout)
 
@@ -29,7 +31,8 @@ class AddActivity : AppCompatActivity() {
         }
 
         post_btn.setOnClickListener{
-
+            val intent = Intent(this, UploadPostActivity::class.java)
+            startActivity(intent)
         }
 
         group_btn.setOnClickListener{

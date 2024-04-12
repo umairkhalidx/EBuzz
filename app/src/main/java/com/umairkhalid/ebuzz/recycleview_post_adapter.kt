@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.VideoView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 class recycleview_post_adapter (val itemslist: ArrayList<recycleview_post_data>)
@@ -16,6 +17,8 @@ class recycleview_post_adapter (val itemslist: ArrayList<recycleview_post_data>)
         lateinit var user_name : TextView
         lateinit var post_image : ImageView
         lateinit var post_video : VideoView
+        lateinit var post_image_cardview : CardView
+        lateinit var post_video_cardview : CardView
         lateinit var post_text : TextView
         lateinit var description : TextView
         var post_type : Int = 0
@@ -28,6 +31,8 @@ class recycleview_post_adapter (val itemslist: ArrayList<recycleview_post_data>)
             post_video = itemView.findViewById(R.id.post_video_view)
             post_text= itemView.findViewById(R.id.post_text_view)
             description= itemView.findViewById(R.id.post_description)
+            post_image_cardview = itemView.findViewById(R.id.post_image_cardview)
+            post_video_cardview = itemView.findViewById(R.id.post_video_cardview)
 
         }
 
@@ -51,6 +56,14 @@ class recycleview_post_adapter (val itemslist: ArrayList<recycleview_post_data>)
 //            .into(holder.display_pic)
 //        holder.message.setText(itemslist[position].message)
         holder.user_name.setText((itemslist[position].username))
+        if(itemslist[position].post_type == 0 ){
+            holder.post_image_cardview.visibility=View.GONE
+            holder.post_video_cardview.visibility=View.GONE
+            holder.post_text.visibility=View.VISIBLE
+            holder.description.visibility=View.GONE
+
+
+        }
 
 
     }

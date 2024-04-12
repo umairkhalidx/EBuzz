@@ -183,7 +183,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account?  "
-                android:textColor="@color/white"></TextView>
+                android:textColor="@color/white">
+
+            </TextView>
 
             <TextView
                 android:id="@+id/signup_login_txt_1"
