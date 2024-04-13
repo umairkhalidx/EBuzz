@@ -243,7 +243,7 @@
                 </Button>
 
                 <Button
-                    android:id="@+id/myprofile_requests_btn"
+                    android:id="@+id/myprofile_mypage_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     app:cornerRadius="6dp"
@@ -251,7 +251,7 @@
                     android:textColor="#070707"
                     android:layout_marginLeft="10dp"
                     android:textSize="14dp"
-                    android:text="Requests"
+                    android:text="My Page"
                     android:clickable="true"
                     >
                 </Button>

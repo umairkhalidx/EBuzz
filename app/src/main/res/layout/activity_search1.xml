@@ -76,365 +76,439 @@
 
     </androidx.cardview.widget.CardView>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="60dp"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            >
+            android:background="#FFC000"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/search1_people_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:foreground="@drawable/textbox_round_yellow"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="40dp"
+                android:text="Find Friends"
+                android:textSize="18dp"
+                android:textColor="@color/black"
                 >
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    android:backgroundTint="#FFFFE0"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="20dp"
-                    android:foreground="@drawable/textbox_round_recycleview"
-                    >
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-
-                        >
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            >
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                app:cardCornerRadius="50dp"
-                                app:cardElevation="0dp"
-                                android:layout_marginTop="10dp"
-                                >
-
-                                <ImageView
-                                    android:id="@+id/search1_people_img"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/people">
-
-                                </ImageView>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            >
-
-                            <TextView
-                                android:id="@+id/search1_people_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="People"
-                                android:textColor="#070707"
-                                android:textSize="16dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                >
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            >
-
-                            <Button
-                                android:id="@+id/search1_people_btn"
-                                android:layout_width="wrap_content"
-                                android:layout_height="36dp"
-                                android:backgroundTint="#070707"
-                                android:clickable="true"
-                                android:text="Discover"
-                                android:textColor="@color/white"
-                                android:textSize="12dp"
-                                app:cornerRadius="4dp"
-                                android:layout_marginBottom="10dp"
-                                >
-
-                            </Button>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
+            </Button>
 
 
 
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/search1_groups_btn"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:foreground="@drawable/textbox_round_yellow"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:text="Search for Groups"
+                android:textSize="18dp"
+                android:textColor="@color/black"
                 >
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    android:backgroundTint="#FFFFE0"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="20dp"
-                    android:foreground="@drawable/textbox_round_recycleview"
-                    >
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
+            </Button>
 
-                        >
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            >
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                app:cardCornerRadius="50dp"
-                                app:cardElevation="0dp"
-                                android:layout_marginTop="10dp"
-                                >
+            <Button
+                android:id="@+id/search1_pages_btn"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:foreground="@drawable/textbox_round_yellow"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="30dp"
+                android:text="Search for Pages"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                >
 
-                                <ImageView
-                                    android:id="@+id/search1_groups_img"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/groups">
-
-                                </ImageView>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            >
-
-                            <TextView
-                                android:id="@+id/search1_groups_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Groups"
-                                android:textColor="#070707"
-                                android:textSize="16dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                >
-
-                            </TextView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            >
-
-                            <Button
-                                android:id="@+id/search1_groups_btn"
-                                android:layout_width="wrap_content"
-                                android:layout_height="36dp"
-                                android:backgroundTint="#070707"
-                                android:clickable="true"
-                                android:text="Discover"
-                                android:textColor="@color/white"
-                                android:textSize="12dp"
-                                app:cornerRadius="4dp"
-                                android:layout_marginBottom="10dp"
-                                >
-
-                            </Button>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
+            </Button>
 
 
         </LinearLayout>
 
+    </androidx.cardview.widget.CardView>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        >-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            >-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                >-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="10dp"-->
+<!--                    app:cardElevation="10dp"-->
+<!--                    android:backgroundTint="#FFFFE0"-->
+<!--                    android:layout_marginStart="14dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="16dp"-->
+<!--                    android:layout_marginBottom="20dp"-->
+<!--                    android:foreground="@drawable/textbox_round_recycleview"-->
+<!--                    >-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_marginEnd="20dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:layout_marginBottom="10dp"-->
+
+<!--                        >-->
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            >-->
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="80dp"-->
+<!--                                android:layout_height="80dp"-->
+<!--                                app:cardCornerRadius="50dp"-->
+<!--                                app:cardElevation="0dp"-->
+<!--                                android:layout_marginTop="10dp"-->
+<!--                                >-->
+
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/search1_people_img"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:scaleType="centerCrop"-->
+<!--                                    android:src="@drawable/people">-->
+
+<!--                                </ImageView>-->
+
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            >-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/search1_people_txt"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="People"-->
+<!--                                android:textColor="#070707"-->
+<!--                                android:textSize="16dp"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:layout_marginRight="10dp"-->
+<!--                                >-->
+
+<!--                            </TextView>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:layout_marginTop="4dp"-->
+<!--                            >-->
+
+<!--                            <Button-->
+<!--                                android:id="@+id/search1_people_btn"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="36dp"-->
+<!--                                android:backgroundTint="#070707"-->
+<!--                                android:clickable="true"-->
+<!--                                android:text="Discover"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="12dp"-->
+<!--                                app:cornerRadius="4dp"-->
+<!--                                android:layout_marginBottom="10dp"-->
+<!--                                >-->
+
+<!--                            </Button>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--            </LinearLayout>-->
 
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            >
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                >-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                >
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="10dp"-->
+<!--                    app:cardElevation="10dp"-->
+<!--                    android:backgroundTint="#FFFFE0"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginEnd="16dp"-->
+<!--                    android:layout_marginBottom="20dp"-->
+<!--                    android:foreground="@drawable/textbox_round_recycleview"-->
+<!--                    >-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_marginEnd="20dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:layout_marginBottom="10dp"-->
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
-                    android:backgroundTint="#FFFFE0"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="20dp"
-                    android:foreground="@drawable/textbox_round_recycleview"
-                    >
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="22dp"
-                        android:layout_marginEnd="22dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
+<!--                        >-->
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            >-->
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="80dp"-->
+<!--                                android:layout_height="80dp"-->
+<!--                                app:cardCornerRadius="50dp"-->
+<!--                                app:cardElevation="0dp"-->
+<!--                                android:layout_marginTop="10dp"-->
+<!--                                >-->
 
-                        >
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            >
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                app:cardCornerRadius="50dp"
-                                app:cardElevation="0dp"
-                                android:layout_marginTop="10dp"
-                                >
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/search1_groups_img"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:scaleType="centerCrop"-->
+<!--                                    android:src="@drawable/groups">-->
 
-                                <ImageView
-                                    android:id="@+id/search1_pages_img"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/pages">
+<!--                                </ImageView>-->
 
-                                </ImageView>
+<!--                            </androidx.cardview.widget.CardView>-->
 
-                            </androidx.cardview.widget.CardView>
+<!--                        </LinearLayout>-->
 
-                        </LinearLayout>
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            >-->
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            >
+<!--                            <TextView-->
+<!--                                android:id="@+id/search1_groups_txt"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Groups"-->
+<!--                                android:textColor="#070707"-->
+<!--                                android:textSize="16dp"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:layout_marginRight="10dp"-->
+<!--                                >-->
 
-                            <TextView
-                                android:id="@+id/search1_pages_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Pages"
-                                android:textColor="#070707"
-                                android:textSize="16dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                >
+<!--                            </TextView>-->
 
-                            </TextView>
+<!--                        </LinearLayout>-->
 
-                        </LinearLayout>
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:layout_marginTop="4dp"-->
+<!--                            >-->
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            >
+<!--                            <Button-->
+<!--                                android:id="@+id/search1_groups_btn"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="36dp"-->
+<!--                                android:backgroundTint="#070707"-->
+<!--                                android:clickable="true"-->
+<!--                                android:text="Discover"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="12dp"-->
+<!--                                app:cornerRadius="4dp"-->
+<!--                                android:layout_marginBottom="10dp"-->
+<!--                                >-->
 
-                            <Button
-                                android:id="@+id/search1_pages_btn"
-                                android:layout_width="wrap_content"
-                                android:layout_height="36dp"
-                                android:backgroundTint="#070707"
-                                android:clickable="true"
-                                android:text="Discover"
-                                android:textColor="@color/white"
-                                android:textSize="12dp"
-                                app:cornerRadius="4dp"
-                                android:layout_marginBottom="10dp"
-                                >
+<!--                            </Button>-->
 
-                            </Button>
+<!--                        </LinearLayout>-->
 
-                        </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                    </LinearLayout>
+<!--                </androidx.cardview.widget.CardView>-->
 
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 
 
 
-    </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            >-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                >-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:cardCornerRadius="10dp"-->
+<!--                    app:cardElevation="10dp"-->
+<!--                    android:backgroundTint="#FFFFE0"-->
+<!--                    android:layout_marginStart="14dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="16dp"-->
+<!--                    android:layout_marginBottom="20dp"-->
+<!--                    android:foreground="@drawable/textbox_round_recycleview"-->
+<!--                    >-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:layout_marginStart="22dp"-->
+<!--                        android:layout_marginEnd="22dp"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginBottom="12dp"-->
+
+<!--                        >-->
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            >-->
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="80dp"-->
+<!--                                android:layout_height="80dp"-->
+<!--                                app:cardCornerRadius="50dp"-->
+<!--                                app:cardElevation="0dp"-->
+<!--                                android:layout_marginTop="10dp"-->
+<!--                                >-->
+
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/search1_pages_img"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:scaleType="centerCrop"-->
+<!--                                    android:src="@drawable/pages">-->
+
+<!--                                </ImageView>-->
+
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            >-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/search1_pages_txt"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="Pages"-->
+<!--                                android:textColor="#070707"-->
+<!--                                android:textSize="16dp"-->
+<!--                                android:layout_marginLeft="10dp"-->
+<!--                                android:layout_marginRight="10dp"-->
+<!--                                >-->
+
+<!--                            </TextView>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:layout_marginTop="4dp"-->
+<!--                            >-->
+
+<!--                            <Button-->
+<!--                                android:id="@+id/search1_pages_btn"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="36dp"-->
+<!--                                android:backgroundTint="#070707"-->
+<!--                                android:clickable="true"-->
+<!--                                android:text="Discover"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="12dp"-->
+<!--                                app:cornerRadius="4dp"-->
+<!--                                android:layout_marginBottom="10dp"-->
+<!--                                >-->
+
+<!--                            </Button>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--            </LinearLayout>-->
+
+
+<!--        </LinearLayout>-->
+
+
+
+
+<!--    </LinearLayout>-->
 
 
 </LinearLayout>

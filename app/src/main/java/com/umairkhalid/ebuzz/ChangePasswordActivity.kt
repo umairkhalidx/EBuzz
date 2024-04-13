@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -16,7 +17,10 @@ class ChangePasswordActivity : AppCompatActivity() {
         setContentView(R.layout.activity_change_password)
 
         val back_btn =findViewById<ImageButton>(R.id.changepassword_back_btn)
-        val email = findViewById<TextView>(R.id.changepassword_email_txt)
+        val email = findViewById<EditText>(R.id.changepassword_email_txt)
+        val oldpass = findViewById<EditText>(R.id.changepassword_oldpassword_txt)
+        val newpass = findViewById<EditText>(R.id.changepassword_newpassword_txt)
+        val confirm_pass = findViewById<EditText>(R.id.changepassword_confirmpass_txt)
         val change_btn = findViewById<Button>(R.id.changepassword_change_btn)
 
         val changepassword_layout=findViewById<LinearLayout>(R.id.changepassword_layout)

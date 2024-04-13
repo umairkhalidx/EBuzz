@@ -12,8 +12,6 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Spinner
-import android.widget.TextView
-import android.widget.ToggleButton
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +23,7 @@ class SettingsActivity : AppCompatActivity() {
         val password_btn = findViewById<Button>(R.id.settings_password_btn)
         val report_btn = findViewById<Button>(R.id.settings_report_btn)
         val feedback_btn  = findViewById<Button>(R.id.settings_feedback_btn)
+        val deactivate_btn = findViewById<Button>(R.id.settings_deactivate_btn)
 
 
         val settings_layout=findViewById<LinearLayout>(R.id.settings_layout)
@@ -48,6 +47,11 @@ class SettingsActivity : AppCompatActivity() {
 
         report_btn.setOnClickListener{
             val intent = Intent(this, ReportProblemActivity::class.java)
+            startActivity(intent)
+        }
+
+        deactivate_btn.setOnClickListener{
+            val intent = Intent(this, DeleteAccountActivity::class.java)
             startActivity(intent)
         }
 

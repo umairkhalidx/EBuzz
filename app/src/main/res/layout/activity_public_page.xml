@@ -127,6 +127,59 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="10dp"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                >
+
+                <Button
+                    android:id="@+id/publicpage_addpost_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#FFC000"
+                    android:textColor="#070707"
+                    android:textSize="14dp"
+                    android:text=" Add Post "
+                    android:clickable="true"
+                    >
+                </Button>
+
+                <Button
+                    android:id="@+id/publicpage_leavepage_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    app:cornerRadius="6dp"
+                    android:backgroundTint="#070707"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:text="Leave Page"
+                    android:clickable="true"
+                    android:layout_marginLeft="10dp"
+                    >
+                </Button>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         >

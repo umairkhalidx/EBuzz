@@ -35,7 +35,7 @@ class GuestLoginActivity : AppCompatActivity() {
         login_txt.text = spannableString
 
         getin_btn.setOnClickListener{
-            val intent = Intent(this, HomePageActivity::class.java)
+            val intent = Intent(this, GuestHomePageActivity::class.java)
             startActivity(intent)
             finish()
         }

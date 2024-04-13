@@ -7,6 +7,7 @@ import android.view.animation.AnimationUtils
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Spinner
@@ -18,8 +19,8 @@ class CreatePageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_page)
 
         val back_btn = findViewById<ImageButton>(R.id.createpage_back_btn)
-        val name_txt = findViewById<TextView>(R.id.createpage_email_txt)
-        val description = findViewById<TextView>(R.id.createpage_description_txt)
+        val name_txt = findViewById<EditText>(R.id.createpage_email_txt)
+        val description = findViewById<EditText>(R.id.createpage_description_txt)
         val upload_btn = findViewById<Button>(R.id.createpage_upload_photo_btn)
         val create_btn =findViewById<Button>(R.id.createpage_create_btn)
         val page_type_spinner = findViewById<Spinner>(R.id.createpage_pagetype_spinner)

@@ -7,10 +7,11 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MyProfileActivity : AppCompatActivity() {
+class MyProfileActivity : AppCompatActivity(),ClickListner {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +24,7 @@ class MyProfileActivity : AppCompatActivity() {
         val friends_list_btn = findViewById<Button>(R.id.myprofile_friends_list_btn)
         val user_img = findViewById<ImageView>(R.id.myprofile_user_img)
         val cover_img =findViewById<ImageView>(R.id.myprofile_cover_img)
-        val requests_btn = findViewById<Button>(R.id.myprofile_requests_btn)
+        val mypage_btn = findViewById<Button>(R.id.myprofile_mypage_btn)
         val settings_btn = findViewById<Button>(R.id.myprofile_settings_btn)
         val aboutme_btn = findViewById<Button>(R.id.myprofile_aboutme_btn)
         val abooutme_txt =findViewById<TextView>(R.id.myprofile_aboutme_txt)
@@ -45,8 +46,8 @@ class MyProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        requests_btn.setOnClickListener{
-            val intent = Intent(this, RequestsActivity::class.java)
+        mypage_btn.setOnClickListener{
+            val intent = Intent(this, MyPageActivity::class.java)
             startActivity(intent)
         }
 
@@ -82,8 +83,12 @@ class MyProfileActivity : AppCompatActivity() {
 
 
         // 3- Adapter
-        val adapter = recycleview_post_adapter(adapter_data_list)
+        val adapter = recycleview_post_adapter(adapter_data_list,this)
         recyclerView.adapter = adapter
 
+    }
+
+    override fun onCLick_fun(position: Int, username: String, operation: Int) {
+        Toast.makeText(this,"Will be Implemented Soon",Toast.LENGTH_LONG).show()
     }
 }

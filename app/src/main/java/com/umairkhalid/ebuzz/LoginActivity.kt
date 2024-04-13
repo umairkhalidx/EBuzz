@@ -9,6 +9,7 @@ import android.text.Spanned
 import android.text.style.UnderlineSpan
 import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.airbnb.lottie.LottieAnimationView
@@ -18,8 +19,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val email=findViewById<TextView>(R.id.login_email_txt)
-        val pass=findViewById<TextView>(R.id.login_pass_txt)
+        val email=findViewById<EditText>(R.id.login_email_txt)
+        val pass=findViewById<EditText>(R.id.login_pass_txt)
         val forgotPass=findViewById<TextView>(R.id.login_forgot_txt)
         val login_btn=findViewById<Button>(R.id.login_login_btn)
         val signup_btn=findViewById<Button>(R.id.login_signup_btn)

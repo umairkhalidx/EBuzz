@@ -136,6 +136,22 @@
 
         </Button>
 
+        <Button
+            android:id="@+id/settings_deactivate_btn"
+            android:layout_width="270dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#070707"
+            android:text="Deactivate your Account"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            >
+
+        </Button>
+
 </LinearLayout>
 
 
