@@ -120,37 +120,6 @@ class HomePageActivity : AppCompatActivity(), ClickListner {
         // 3- Adapter
         val adapter = recycleview_post_adapter(adapter_data_list,this)
         recyclerView.adapter = adapter
-
-
-//
-//        val btn=findViewById<Button>(R.id.button)
-//        btn.setOnClickListener{
-//            val intent = Intent(this, MessagingActivity::class.java)
-//            startActivity(intent)
-////            finish()
-//        }
-//
-//        val btn_1=findViewById<Button>(R.id.button_1)
-//        btn_1.setOnClickListener{
-//            val intent = Intent(this, MyProfileActivity::class.java)
-//            startActivity(intent)
-////            finish()
-//        }
-//
-//        val btn_2=findViewById<Button>(R.id.button_2)
-//        btn_2.setOnClickListener{
-//            val intent = Intent(this, GroupMessagingActivity::class.java)
-//            startActivity(intent)
-////            finish()
-//        }
-//
-//        val btn_3=findViewById<Button>(R.id.button_3)
-//        btn_3.setOnClickListener{
-//            val intent = Intent(this, ChatsActivity::class.java)
-//            startActivity(intent)
-////            finish()
-//        }
-
     }
 
     override fun onCLick_fun(position: Int, username: String, operation: Int) {
@@ -236,6 +205,7 @@ class HomePageActivity : AppCompatActivity(), ClickListner {
                 val search_btn = send_layout.findViewById<ImageButton>(R.id.send_searchbar_btn)
                 val search_txt = send_layout.findViewById<EditText>(R.id.send_searchbar_txt)
                 val send_btn = send_layout.findViewById<Button>(R.id.send_send_btn)
+                val repost_btn = send_layout.findViewById<Button>(R.id.send_repost_btn)
 
 
                 backBtnId?.setOnClickListener {

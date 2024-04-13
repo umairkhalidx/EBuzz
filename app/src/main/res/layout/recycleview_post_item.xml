@@ -198,13 +198,13 @@
                     android:id="@+id/post_heart_btn"
                     android:layout_width="44dp"
                     android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/heart_btn_filled"
                     android:background="@android:color/transparent"
-                    android:paddingBottom="6dp"
+                    android:paddingLeft="8dp"
                     android:paddingTop="4dp"
                     android:paddingRight="4dp"
-                    android:paddingLeft="8dp"
+                    android:paddingBottom="6dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/heart_btn_filled"
                     >
 
                 </ImageButton>
@@ -213,14 +213,14 @@
                     android:id="@+id/post_comment_btn"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/comment_btn_unfilled"
                     android:background="@android:color/transparent"
-                    android:paddingBottom="6dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:paddingLeft="8dp"
                     android:paddingTop="4dp"
                     android:paddingRight="4dp"
-                    android:paddingLeft="8dp"
+                    android:paddingBottom="6dp"
                     android:scaleType="centerCrop"
-                    android:backgroundTint="@android:color/transparent"
+                    android:src="@drawable/comment_btn_unfilled"
                     android:layout_marginStart="6dp"
                     >
 
