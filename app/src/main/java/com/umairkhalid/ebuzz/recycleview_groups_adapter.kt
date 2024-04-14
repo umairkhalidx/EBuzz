@@ -78,6 +78,12 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
             holder.groupname_1.setOnClickListener{
                 listener.onCLick_fun(position,"",0)
             }
+            holder.leavegroup_btn_1.setOnClickListener{
+                listener.onCLick_fun(position,"",1)
+            }
+            holder.viewmore_btn_1.setOnClickListener{
+                listener.onCLick_fun(position,"",0)
+            }
 
 
         }else{
@@ -113,6 +119,12 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
 
             holder.viewmore_btn_1.setOnClickListener{
                 listener.onCLick_fun(position,"",0)
+            }
+            holder.leavegroup_btn_1.setOnClickListener{
+                listener.onCLick_fun(position,"",1)
+            }
+            holder.leavegroup_btn_2.setOnClickListener{
+                listener.onCLick_fun(position,"",1)
             }
 
         }

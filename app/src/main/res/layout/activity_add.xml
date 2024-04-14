@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFE0"
+    tools:context=".AddActivity"
     android:orientation="vertical"
     >
 

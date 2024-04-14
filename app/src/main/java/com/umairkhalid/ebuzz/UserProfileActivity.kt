@@ -1,5 +1,6 @@
 package com.umairkhalid.ebuzz
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -56,6 +57,28 @@ class UserProfileActivity : AppCompatActivity(), ClickListner{
 //            startActivity(intent)
             onBackPressed()
             finish()
+        }
+
+        unfriend_btn.setOnClickListener{
+            val builder = AlertDialog.Builder(this)
+
+            builder.setTitle("Confirmation")
+            builder.setMessage("Are you sure you want to unfriend this account?")
+
+            builder.setPositiveButton("Yes") { dialog, _ ->
+                // Handle 'Yes' button click
+                dialog.dismiss()
+                onBackPressed()
+                finish()
+            }
+
+            builder.setNegativeButton("No") { dialog, _ ->
+                // Handle 'No' button click
+                dialog.dismiss()
+            }
+
+            val dialog = builder.create()
+            dialog.show()
         }
 
         message_btn.setOnClickListener{
