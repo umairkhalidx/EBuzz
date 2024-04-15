@@ -291,6 +291,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="-24dp"
+                android:backgroundTint="@color/white"
                 android:foreground="@drawable/homepage_menu_cardview"
                 app:cardCornerRadius="22dp"
                 app:cardElevation="0dp">
@@ -498,6 +499,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="-24dp"
+                android:backgroundTint="@color/white"
                 android:foreground="@drawable/homepage_menu_cardview"
                 app:cardCornerRadius="22dp"
                 app:cardElevation="0dp">

@@ -49,7 +49,6 @@ class HomePageActivity : AppCompatActivity(), ClickListner {
 
 
 
-
         notifications_btn.setOnClickListener{
             val intent = Intent(this, NotificationsActivity::class.java)
             startActivity(intent)
@@ -165,6 +164,8 @@ class HomePageActivity : AppCompatActivity(), ClickListner {
                     click_layout.startAnimation(slideDownAnimation)
                 }
 
+
+
                 var adapter_data_list : ArrayList<recycleview_comment_data> = ArrayList()
 
                 val recyclerView : RecyclerView = findViewById(R.id.comments_recycleView)
@@ -256,4 +257,5 @@ class HomePageActivity : AppCompatActivity(), ClickListner {
         }
 
     }
+
 }
