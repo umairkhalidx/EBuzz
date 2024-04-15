@@ -67,7 +67,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:text="@string/groupname"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -82,7 +82,7 @@
                         android:id="@+id/groups_viewmore_btn_1"
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
-                        android:backgroundTint="#070707"
+                        android:backgroundTint="@color/bright_black"
                         android:text="@string/_view_more_"
                         android:textColor="@color/white"
                         android:textSize="12sp"
@@ -101,7 +101,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:layout_marginBottom="10dp"
-                        android:backgroundTint="#070707"
+                        android:backgroundTint="@color/bright_black"
                         android:text="@string/leave_group"
                         android:textColor="@color/white"
                         android:textSize="12sp"
@@ -176,7 +176,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:text="@string/groupname"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -191,7 +191,7 @@
                         android:id="@+id/groups_viewmore_btn_2"
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
-                        android:backgroundTint="#070707"
+                        android:backgroundTint="@color/bright_black"
                         android:text="@string/_view_more_"
                         android:textColor="@color/white"
                         android:textSize="12sp"
@@ -210,7 +210,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:layout_marginBottom="10dp"
-                        android:backgroundTint="#070707"
+                        android:backgroundTint="@color/bright_black"
                         android:text="@string/leave_group"
                         android:textColor="@color/white"
                         android:textSize="12sp"

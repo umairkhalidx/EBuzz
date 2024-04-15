@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFE0"
+    android:background="@color/light_yellow"
     tools:context=".MessagingActivity">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-28dp"
-            android:backgroundTint="#FFC000"
+            android:backgroundTint="@color/dark_yellow"
             app:cardCornerRadius="34dp"
             app:cardElevation="0dp">
 
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="20dp"
-                android:background="#FFC000"
+                android:background="@color/dark_yellow"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -71,7 +71,7 @@
                     android:layout_toStartOf="@+id/messaging_audiocall_btn"
                     android:layout_toEndOf="@+id/cardView"
                     android:text="@string/username"
-                    android:textColor="#070707"
+                    android:textColor="@color/bright_black"
                     android:textSize="18sp" />
 
                 <ImageButton
@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="#FFC000"
+            android:backgroundTint="@color/dark_yellow"
             app:cardCornerRadius="20dp"
             app:cardElevation="0dp">
 
@@ -182,10 +182,9 @@
                     android:background="@android:color/transparent"
                     android:hint="@string/message"
                     android:importantForAutofill="no"
-                    android:inputType="textLongMessage"
-                    android:textSize="18sp">
-
-                </EditText>
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
                 <ImageButton
                     android:id="@+id/messaging_mic_btn"

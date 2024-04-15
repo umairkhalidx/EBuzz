@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/username"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -151,7 +151,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/username"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -229,7 +229,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/username"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="16sp"/>
 
                 </LinearLayout>

@@ -183,4 +183,9 @@
     <string name="public_page">Public Page</string>
     <string name="follow_up">Follow Up</string>
     <string name="leave_page">Leave Page</string>
+    <string name="people_icon">People Icon</string>
+    <string name="people">People</string>
+    <string name="discover">Discover</string>
+    <string name="groups_icon">Groups Icon</string>
+    <string name="pages_icon">Pages Icon</string>
 </resources>

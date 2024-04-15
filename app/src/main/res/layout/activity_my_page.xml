@@ -5,7 +5,7 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFE0"
+    android:background="@color/light_yellow"
     tools:context=".MyPageActivity">
 
 
@@ -37,7 +37,7 @@
             android:layout_toStartOf="@+id/mypage_delete_btn"
             android:layout_toEndOf="@+id/mypage_back_btn"
             android:text="@string/my_page"
-            android:textColor="#070707"
+            android:textColor="@color/bright_black"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:layout_marginEnd="20dp"
-            android:backgroundTint="#070707"
+            android:backgroundTint="@color/bright_black"
             android:paddingStart="14dp"
             android:paddingTop="0dp"
             android:paddingEnd="14dp"
@@ -91,7 +91,7 @@
                         android:id="@+id/mypage_cover_img"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:background="#FFC000"
+                        android:background="@color/dark_yellow"
                         android:contentDescription="@string/cover_photo"
                         android:scaleType="centerCrop" />
 
@@ -129,7 +129,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="@string/pagename"
-                            android:textColor="#070707"
+                            android:textColor="@color/bright_black"
                             android:textSize="22sp"
                             android:textStyle="bold" />
 
@@ -148,7 +148,7 @@
                         android:id="@+id/mypage_aboutme_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:backgroundTint="#FFC000"
+                        android:backgroundTint="@color/dark_yellow"
                         android:text="@string/about_me"
                         android:textColor="@color/black"
                         android:textSize="14sp"
@@ -159,9 +159,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginStart="10dp"
-                        android:backgroundTint="#FFC000"
+                        android:backgroundTint="@color/dark_yellow"
                         android:text="@string/add_post"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="14sp"
                         app:cornerRadius="6dp" />
 
@@ -170,7 +170,7 @@
                     <!--                    android:layout_width="wrap_content"-->
                     <!--                    android:layout_height="40dp"-->
                     <!--                    app:cornerRadius="6dp"-->
-                    <!--                    android:backgroundTint="#070707"-->
+                    <!--                    android:backgroundTint="@color/bright_black"-->
                     <!--                    android:textColor="@color/white"-->
                     <!--                    android:layout_marginLeft="10dp"-->
                     <!--                    android:textSize="14dp"-->
@@ -194,7 +194,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/page_description"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -301,7 +301,7 @@
                                 <View
                                     android:layout_width="100dp"
                                     android:layout_height="4dp"
-                                    android:background="#070707" />
+                                    android:background="@color/bright_black" />
 
                             </androidx.cardview.widget.CardView>
 
@@ -328,7 +328,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
                                 android:text="@string/comments"
-                                android:textColor="#070707"
+                                android:textColor="@color/bright_black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
@@ -370,7 +370,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
-                            android:backgroundTint="#FFC000"
+                            android:backgroundTint="@color/dark_yellow"
                             app:cardCornerRadius="20dp"
                             app:cardElevation="0dp">
 
@@ -414,7 +414,8 @@
                                     android:background="@android:color/transparent"
                                     android:hint="@string/add_a_comment"
                                     android:importantForAutofill="no"
-                                    android:inputType="textLongMessage"
+                                    android:inputType="textMultiLine"
+                                    android:textColor="@color/black"
                                     android:textSize="18sp" />
 
                                 <androidx.cardview.widget.CardView
@@ -507,7 +508,7 @@
                                 <View
                                     android:layout_width="100dp"
                                     android:layout_height="4dp"
-                                    android:background="#070707" />
+                                    android:background="@color/bright_black" />
 
                             </androidx.cardview.widget.CardView>
 
@@ -536,7 +537,7 @@
                                 android:layout_toStartOf="@+id/send_repost_btn"
                                 android:layout_toEndOf="@+id/send_back_btn"
                                 android:text="@string/send_now"
-                                android:textColor="#070707"
+                                android:textColor="@color/bright_black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
@@ -547,7 +548,7 @@
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginEnd="20dp"
-                                android:backgroundTint="#FFC000"
+                                android:backgroundTint="@color/dark_yellow"
                                 android:gravity="center_vertical|center_horizontal"
                                 android:paddingStart="0dp"
                                 android:paddingEnd="0dp"
@@ -583,10 +584,9 @@
                                 android:layout_marginStart="30dp"
                                 android:background="@drawable/textbox_round_yellow_no_left"
                                 android:hint="@string/search"
-                                android:importantForAutofill="no"
-                                android:inputType="text"
                                 android:paddingStart="16dp"
-                                android:paddingEnd="12dp" />
+                                android:paddingEnd="12dp"
+                                android:textColor="@color/black" />
 
                         </RelativeLayout>
 
@@ -626,7 +626,7 @@
                         <!--                            android:layout_height="wrap_content"-->
                         <!--                            android:layout_marginTop="8dp"-->
                         <!--                            android:layout_marginBottom="30dp"-->
-                        <!--                            android:backgroundTint="#FFC000"-->
+                        <!--                            android:backgroundTint="@color/dark_yellow"-->
                         <!--                            android:text="@string/repost"-->
                         <!--                            android:textColor="@color/black"-->
                         <!--                            android:textSize="18sp"-->
@@ -640,7 +640,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="30dp"
                             android:layout_marginBottom="30dp"
-                            android:backgroundTint="#070707"
+                            android:backgroundTint="@color/bright_black"
                             android:text="@string/send_now"
                             android:textColor="@color/white"
                             android:textSize="18sp"

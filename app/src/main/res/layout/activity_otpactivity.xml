@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFE0"
+    android:background="@color/light_yellow"
     android:orientation="vertical"
     tools:context=".OTPActivity">
 
@@ -29,7 +29,7 @@
             android:layout_gravity="start"
             android:layout_marginStart="34dp"
             android:text="@string/verification"
-            android:textColor="#070707"
+            android:textColor="@color/bright_black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -64,6 +64,7 @@
             android:gravity="center_horizontal|center_vertical"
             android:importantForAutofill="no"
             android:inputType="number"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -77,6 +78,7 @@
             android:gravity="center_horizontal|center_vertical"
             android:importantForAutofill="no"
             android:inputType="number"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -90,6 +92,7 @@
             android:gravity="center_horizontal|center_vertical"
             android:importantForAutofill="no"
             android:inputType="number"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -103,6 +106,7 @@
             android:gravity="center_horizontal|center_vertical"
             android:importantForAutofill="no"
             android:inputType="number"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -122,9 +126,9 @@
             android:layout_width="150dp"
             android:layout_height="44dp"
             android:layout_gravity="center"
-            android:backgroundTint="#FFC000"
+            android:backgroundTint="@color/dark_yellow"
             android:text="@string/confirm"
-            android:textColor="#070707"
+            android:textColor="@color/bright_black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="8dp" />
@@ -135,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:text="@string/send_code_again"
-            android:textColor="#070707"
+            android:textColor="@color/bright_black"
             android:textSize="12sp" />
 
     </LinearLayout>

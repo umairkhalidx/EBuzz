@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
-        }, 4000)
+        }, 3000)
 
 //        val logo :ImageView
 //        logo=findViewById(R.id.mainactivity_logo)

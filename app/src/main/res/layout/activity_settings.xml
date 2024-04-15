@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFE0"
+    android:background="@color/light_yellow"
     android:orientation="vertical"
     android:weightSum="100">
 
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="-28dp"
-        android:backgroundTint="#FFC000"
+        android:backgroundTint="@color/dark_yellow"
         app:cardCornerRadius="34dp"
         app:cardElevation="0dp">
 
@@ -36,7 +36,7 @@
                 android:layout_gravity="start"
                 android:layout_marginStart="34dp"
                 android:text="@string/settings"
-                android:textColor="#070707"
+                android:textColor="@color/bright_black"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -73,9 +73,9 @@
                 android:layout_height="46dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="42dp"
-                android:backgroundTint="#FFC000"
+                android:backgroundTint="@color/dark_yellow"
                 android:text="@string/account_settings"
-                android:textColor="#070707"
+                android:textColor="@color/bright_black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="8dp" />
@@ -86,9 +86,9 @@
                 android:layout_height="46dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#FFC000"
+                android:backgroundTint="@color/dark_yellow"
                 android:text="@string/change_password"
-                android:textColor="#070707"
+                android:textColor="@color/bright_black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="8dp" />
@@ -99,9 +99,9 @@
                 android:layout_height="46dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#FFC000"
+                android:backgroundTint="@color/dark_yellow"
                 android:text="@string/report_a_problem"
-                android:textColor="#070707"
+                android:textColor="@color/bright_black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="8dp" />
@@ -112,9 +112,9 @@
                 android:layout_height="46dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#FFC000"
+                android:backgroundTint="@color/dark_yellow"
                 android:text="@string/submit_your_feedback"
-                android:textColor="#070707"
+                android:textColor="@color/bright_black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="8dp" />
@@ -125,7 +125,7 @@
                 android:layout_height="46dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#070707"
+                android:backgroundTint="@color/bright_black"
                 android:text="@string/deactivate_your_account"
                 android:textColor="@color/white"
                 android:textSize="16sp"

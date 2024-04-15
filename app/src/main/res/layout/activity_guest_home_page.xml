@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFE0"
+    android:background="@color/light_yellow"
     tools:context=".GuestHomePageActivity">
 
     <LinearLayout
@@ -27,7 +27,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/balsamiqsans_bold"
                 android:text="@string/hello"
-                android:textColor="#070707"
+                android:textColor="@color/bright_black"
                 android:textSize="32sp" />
 
             <TextView
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/balsamiqsans_bold"
                 android:text="@string/guest"
-                android:textColor="#FFC000"
+                android:textColor="@color/dark_yellow"
                 android:textSize="32sp" />
 
         </LinearLayout>
@@ -51,7 +51,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/balsamiqsans_bold"
                 android:text="@string/homepage_greeting_message"
-                android:textColor="#070707"
+                android:textColor="@color/bright_black"
                 android:textSize="12sp">
 
             </TextView>
@@ -82,7 +82,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginStart="10dp"
-                        android:backgroundTint="#070707"
+                        android:backgroundTint="@color/bright_black"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:text="@string/notifications"
@@ -95,9 +95,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginStart="10dp"
-                        android:backgroundTint="#FFC000"
+                        android:backgroundTint="@color/dark_yellow"
                         android:text="@string/requests"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="14sp"
                         app:cornerRadius="6dp" />
 
@@ -106,9 +106,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginStart="10dp"
-                        android:backgroundTint="#FFC000"
+                        android:backgroundTint="@color/dark_yellow"
                         android:text="@string/groups"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="14sp"
                         app:cornerRadius="6dp" />
 
@@ -118,9 +118,9 @@
                         android:layout_height="40dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:backgroundTint="#FFC000"
+                        android:backgroundTint="@color/dark_yellow"
                         android:text="@string/pages"
-                        android:textColor="#070707"
+                        android:textColor="@color/bright_black"
                         android:textSize="14sp"
                         app:cornerRadius="6dp" />
 
@@ -168,7 +168,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="16dp"
             android:layout_toStartOf="@+id/cardView2"
-            android:backgroundTint="#FFFFE0"
+            android:backgroundTint="@color/light_yellow"
             android:foreground="@drawable/textbox_round_yellow"
             app:cardCornerRadius="50dp"
             app:cardElevation="20dp">
@@ -242,7 +242,7 @@
                 android:id="@+id/guesthomepage_add_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#070707"
+                android:background="@color/bright_black"
                 android:clickable="true"
                 android:src="@drawable/add_btn"
                 android:focusable="true"

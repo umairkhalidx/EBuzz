@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFE0"
+    android:background="@color/light_yellow"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="-28dp"
-        android:backgroundTint="#FFC000"
+        android:backgroundTint="@color/dark_yellow"
         app:cardCornerRadius="34dp"
         app:cardElevation="0dp">
 
@@ -65,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/edit_profile"
-                    android:textColor="#070707"
+                    android:textColor="@color/bright_black"
                     android:textSize="32sp"
                     android:textStyle="bold" />
 
@@ -89,8 +89,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="50dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
                 android:text="@string/name"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -107,14 +107,15 @@
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:paddingStart="12dp"
-                android:paddingEnd="12dp" />
+                android:paddingEnd="12dp"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="50dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="50dp"
                 android:text="@string/contact_number"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -131,14 +132,15 @@
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="12dp"
-                android:paddingEnd="12dp" />
+                android:paddingEnd="12dp"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="50dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="50dp"
                 android:text="@string/country"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -158,8 +160,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="50dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="50dp"
                 android:text="@string/province"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -179,8 +181,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginEnd="50dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="50dp"
                 android:text="@string/age"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -209,9 +211,9 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="10dp"
-                android:backgroundTint="#FFC000"
+                android:backgroundTint="@color/dark_yellow"
                 android:text="@string/update_profile"
-                android:textColor="#070707"
+                android:textColor="@color/bright_black"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="8dp" />
