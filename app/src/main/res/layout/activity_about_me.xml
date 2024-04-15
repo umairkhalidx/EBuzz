@@ -1,70 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="#FFFFE0"
-    android:weightSum="100"
-    >
+    android:orientation="vertical"
+    android:weightSum="100">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:cardCornerRadius="34dp"
-        app:cardElevation="0dp"
-        android:backgroundTint="#FFC000"
         android:layout_marginTop="-28dp"
-        >
+        android:backgroundTint="#FFC000"
+        app:cardCornerRadius="34dp"
+        app:cardElevation="0dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center_vertical"
-            >
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
                 >
 
                 <ImageButton
                     android:id="@+id/aboutme_back_btn"
                     android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
                     android:background="@android:color/transparent"
                     android:src="@drawable/back_arrow"
-
-                    />
+                    android:contentDescription="@string/back_button" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="About Me"
+                    android:layout_marginEnd="30dp"
+                    android:text="@string/about_me"
                     android:textColor="#070707"
-                    android:textSize="26dp"
-                    android:textStyle="bold">
-
-                </TextView>
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Here you can change your current Bio that\nwill be visible to all other users."
-                android:textSize="16dp"
+                android:layout_marginStart="34dp"
+                android:layout_marginEnd="60dp"
+                android:text="@string/activity_aboutme_description"
                 android:textColor="@color/black"
-                android:layout_gravity="left"
-                android:layout_marginLeft="34dp"
-                android:layout_marginTop="12dp"
-                >
-            </TextView>
-
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -75,41 +68,38 @@
         android:id="@+id/aboutme_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
-        >
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/aboutme_txt"
             android:layout_width="330dp"
             android:layout_height="110dp"
-            android:background="@drawable/textbox_round_aboutme"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:hint="Tell others about yourself"
+            android:background="@drawable/textbox_round_aboutme"
             android:gravity="top"
+            android:hint="@string/about_me_textbox_hint"
+            android:paddingStart="10dp"
             android:paddingTop="10dp"
-            android:paddingLeft="10dp"
-            >
-
-        </EditText>
-
+            android:paddingEnd="10dp"
+            android:inputType="textLongMessage"
+            android:importantForAutofill="no"
+            android:textColor="#070707"
+            />
 
         <Button
             android:id="@+id/aboutme_update_btn"
             android:layout_width="230dp"
             android:layout_height="54dp"
-            android:backgroundTint="#070707"
-            android:text="Update Bio"
-            android:textColor="@color/white"
-            app:cornerRadius="8dp"
-            android:textStyle="bold"
-            android:textSize="16dp"
             android:layout_marginTop="20dp"
-            >
-
-        </Button>
+            android:backgroundTint="#070707"
+            android:text="@string/update_bio"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp" />
 
     </LinearLayout>
 

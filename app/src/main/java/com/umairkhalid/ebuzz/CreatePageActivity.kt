@@ -19,7 +19,7 @@ class CreatePageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_page)
 
         val back_btn = findViewById<ImageButton>(R.id.createpage_back_btn)
-        val name_txt = findViewById<EditText>(R.id.createpage_email_txt)
+        val name_txt = findViewById<EditText>(R.id.createpage_pagename_txt)
         val description = findViewById<EditText>(R.id.createpage_description_txt)
         val upload_btn = findViewById<Button>(R.id.createpage_upload_photo_btn)
         val create_btn =findViewById<Button>(R.id.createpage_create_btn)

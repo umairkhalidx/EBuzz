@@ -8,7 +8,6 @@
     android:background="#FFFFE0"
     tools:context=".UserProfileActivity">
 
-
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
@@ -23,11 +22,10 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/back_arrow"
-
-            />
+            android:contentDescription="@string/back_button"
+            android:src="@drawable/back_arrow" />
 
         <TextView
             android:id="@+id/user_profile_txt"
@@ -35,17 +33,16 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
+            android:layout_toStartOf="@+id/user_profile_unfriend_btn"
             android:layout_toEndOf="@+id/user_profile_back_btn"
-            android:text="User Profile"
+            android:text="@string/user_profile"
             android:textColor="#070707"
-            android:textSize="26dp"
-            android:textStyle="bold">
-
-        </TextView>
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/user_profile_unfriend_btn"
-            android:layout_width="86dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
@@ -53,13 +50,11 @@
             android:layout_marginEnd="20dp"
             android:backgroundTint="#FFC000"
             android:padding="0dp"
-            android:text="Unfriend"
+            android:text="@string/unfriend"
             android:textColor="#070707"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            app:cornerRadius="8dp">
-
-        </Button>
+            app:cornerRadius="8dp" />
 
     </RelativeLayout>
 
@@ -83,7 +78,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="186dp"
@@ -94,9 +88,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:background="#FFC000"
-                        android:scaleType="centerCrop">
-
-                    </ImageView>
+                        android:contentDescription="@string/cover_photo"
+                        android:scaleType="centerCrop" />
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="40dp"
@@ -112,13 +105,11 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:backgroundTint="#070707"
+                            android:contentDescription="@string/message_button"
                             android:src="@drawable/chat_icon_white"
-                            app:cornerRadius="30dp">
-
-                        </ImageButton>
+                            app:cornerRadius="30dp" />
 
                     </androidx.cardview.widget.CardView>
-
 
                     <Button
                         android:id="@+id/user_profile_request_btn"
@@ -129,18 +120,16 @@
                         android:layout_marginBottom="17dp"
                         android:layout_toEndOf="@+id/linearLayout"
                         android:backgroundTint="#FFC000"
-                        android:text="Send Request"
+                        android:text="@string/send_request"
                         android:textColor="#070707"
-                        android:textStyle="bold">
-
-                    </Button>
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:id="@+id/linearLayout"
                         android:layout_width="wrap_content"
                         android:layout_height="130dp"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
@@ -155,11 +144,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:clickable="true"
+                                android:contentDescription="@string/user_image"
                                 android:focusable="true"
                                 android:scaleType="centerCrop"
-                                android:src="@mipmap/ic_launcher">
-
-                            </ImageView>
+                                android:src="@mipmap/ic_launcher" />
 
                         </androidx.cardview.widget.CardView>
 
@@ -168,12 +156,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="User"
+                            android:text="@string/user"
                             android:textColor="#070707"
-                            android:textSize="16dp"
-                            android:textStyle="bold">
-
-                        </TextView>
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -184,19 +170,16 @@
                             <ImageView
                                 android:layout_width="14dp"
                                 android:layout_height="14dp"
-                                android:src="@drawable/location_icon">
-
-                            </ImageView>
+                                android:contentDescription="@string/city_icon"
+                                android:src="@drawable/location_icon" />
 
                             <TextView
                                 android:id="@+id/user_profile_city_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="City"
+                                android:text="@string/city"
                                 android:textColor="#918c8c"
-                                android:textSize="12dp">
-
-                            </TextView>
+                                android:textSize="12sp" />
 
                         </LinearLayout>
 
@@ -215,12 +198,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="About:"
+                        android:text="@string/about_me_"
                         android:textColor="#070707"
-                        android:textSize="20dp"
-                        android:textStyle="bold">
-
-                    </TextView>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/user_profile_aboutme_txt"
@@ -229,9 +210,7 @@
                         android:layout_marginTop="4dp"
                         android:layout_marginBottom="10dp"
                         android:maxHeight="62dp"
-                        android:text="This is profile's about section">
-
-                    </TextView>
+                        android:text="@string/about_me_description" />
 
                 </LinearLayout>
 
@@ -250,8 +229,7 @@
                     android:id="@+id/user_profile_private_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    >
+                    android:gravity="center_horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -259,34 +237,28 @@
                         android:layout_marginTop="50dp"
                         android:text="Current Profile is Private"
                         android:textColor="#808080"
-                        android:textSize="20dp">
-
-                    </TextView>
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    >
+                    android:visibility="gone">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/user_profile_recyclerview"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="60dp"
-                        />
+                        android:layout_marginBottom="60dp" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
-
 
     <View
         android:id="@+id/transparentView"
@@ -372,22 +344,19 @@
                                 android:id="@+id/comments_back_btn"
                                 android:layout_width="40dp"
                                 android:layout_height="30dp"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
                                 android:background="@android:color/transparent"
-                                android:src="@drawable/back_arrow"
-
-                                />
+                                android:contentDescription="@string/back_button"
+                                android:src="@drawable/back_arrow" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
-                                android:text="Comments"
+                                android:text="@string/comments"
                                 android:textColor="#070707"
-                                android:textSize="20dp"
-                                android:textStyle="bold">
-
-                            </TextView>
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -454,10 +423,9 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
+                                        android:contentDescription="@string/user_image"
                                         android:scaleType="centerCrop"
-                                        android:src="@mipmap/ic_launcher">
-
-                                    </ImageView>
+                                        android:src="@mipmap/ic_launcher" />
 
                                 </androidx.cardview.widget.CardView>
 
@@ -466,14 +434,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginLeft="6dp"
+                                    android:layout_marginStart="6dp"
                                     android:layout_toStartOf="@+id/comments_send_btn"
                                     android:layout_toEndOf="@+id/comments_userimage"
                                     android:background="@android:color/transparent"
-                                    android:hint="Add a comment"
-                                    android:textSize="18sp">
-
-                                </EditText>
+                                    android:hint="@string/add_a_comment"
+                                    android:importantForAutofill="no"
+                                    android:inputType="textLongMessage"
+                                    android:textSize="18sp" />
 
                                 <androidx.cardview.widget.CardView
                                     android:id="@+id/comments_send_btn"
@@ -495,15 +463,14 @@
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center_vertical|center_horizontal"
                                         android:backgroundTint="@android:color/transparent"
-                                        android:paddingLeft="8dp"
+                                        android:contentDescription="@string/send"
+                                        android:paddingStart="8dp"
                                         android:paddingTop="4dp"
-                                        android:paddingRight="4dp"
+                                        android:paddingEnd="4dp"
                                         android:paddingBottom="6dp"
                                         android:rotation="330"
                                         android:scaleType="centerCrop"
-                                        android:src="@drawable/send_btn">
-
-                                    </ImageButton>
+                                        android:src="@drawable/send_btn" />
 
                                 </androidx.cardview.widget.CardView>
 
@@ -573,35 +540,50 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
+                            android:layout_marginTop="10dp">
 
                             <ImageButton
                                 android:id="@+id/send_back_btn"
                                 android:layout_width="40dp"
                                 android:layout_height="30dp"
-                                android:layout_marginLeft="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
                                 android:background="@android:color/transparent"
-                                android:src="@drawable/back_arrow"
-
-                                />
+                                android:contentDescription="@string/back_button"
+                                android:src="@drawable/back_arrow" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:text="Send Now"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@+id/send_repost_btn"
+                                android:layout_toEndOf="@+id/send_back_btn"
+                                android:text="@string/send_now"
                                 android:textColor="#070707"
-                                android:textSize="20dp"
-                                android:textStyle="bold">
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
 
-                            </TextView>
+                            <Button
+                                android:id="@+id/send_repost_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="42dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="20dp"
+                                android:backgroundTint="#FFC000"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:text="@string/repost"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                app:cornerRadius="6dp" />
 
-                        </LinearLayout>
+                        </RelativeLayout>
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -617,20 +599,20 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:background="@android:color/transparent"
-                                android:src="@drawable/search_icon">
-
-                            </ImageButton>
+                                android:contentDescription="@string/search_button"
+                                android:src="@drawable/search_icon" />
 
                             <EditText
                                 android:id="@+id/send_searchbar_txt"
                                 android:layout_width="match_parent"
                                 android:layout_height="36dp"
-                                android:layout_marginLeft="30dp"
+                                android:layout_marginStart="30dp"
                                 android:background="@drawable/textbox_round_yellow_no_left"
-                                android:hint="Search"
-                                android:paddingLeft="16dp">
-
-                            </EditText>
+                                android:hint="@string/search"
+                                android:importantForAutofill="no"
+                                android:inputType="text"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="12dp" />
 
                         </RelativeLayout>
 
@@ -664,41 +646,35 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <Button
-                            android:id="@+id/send_repost_btn"
-                            android:layout_width="140dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="30dp"
-                            android:backgroundTint="#FFC000"
-                            android:clickable="true"
-                            android:text="Repost"
-                            android:textColor="@color/black"
-                            android:textSize="18dp"
-                            app:cornerRadius="6dp">
-
-                        </Button>
+                        <!--                        <Button-->
+                        <!--                            android:id="@+id/send_repost_btn"-->
+                        <!--                            android:layout_width="140dp"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="8dp"-->
+                        <!--                            android:layout_marginBottom="30dp"-->
+                        <!--                            android:backgroundTint="#FFC000"-->
+                        <!--                            android:text="@string/repost"-->
+                        <!--                            android:textColor="@color/black"-->
+                        <!--                            android:textSize="18sp"-->
+                        <!--                            app:cornerRadius="6dp" />-->
 
                         <Button
                             android:id="@+id/send_send_btn"
-                            android:layout_width="140dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="30dp"
                             android:layout_marginBottom="30dp"
                             android:backgroundTint="#070707"
-                            android:clickable="true"
-                            android:text="Send Now"
+                            android:text="@string/send_now"
                             android:textColor="@color/white"
-                            android:textSize="18dp"
-                            app:cornerRadius="6dp">
-
-                        </Button>
+                            android:textSize="18sp"
+                            app:cornerRadius="6dp" />
 
                     </LinearLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             </androidx.cardview.widget.CardView>
 

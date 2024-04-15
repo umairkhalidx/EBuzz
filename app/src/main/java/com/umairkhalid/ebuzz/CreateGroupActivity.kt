@@ -19,7 +19,7 @@ class CreateGroupActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_group)
 
         val back_btn = findViewById<ImageButton>(R.id.creategroup_back_btn)
-        val name_txt = findViewById<EditText>(R.id.creategroup_email_txt)
+        val name_txt = findViewById<EditText>(R.id.creategroup_groupname_txt)
         val description = findViewById<EditText>(R.id.creategroup_description_txt)
         val upload_btn = findViewById<Button>(R.id.creategroup_upload_photo_btn)
         val create_btn =findViewById<Button>(R.id.creategroup_create_btn)

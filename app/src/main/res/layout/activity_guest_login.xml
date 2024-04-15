@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:weightSum="100"
+    android:layout_height="match_parent"
     android:background="#FFFFE0"
-    >
+    android:orientation="vertical"
+    android:weightSum="100">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="30"
-        android:orientation="horizontal"
         android:gravity="top|center"
-        >
+        android:orientation="horizontal">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/guest_login_animation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:lottie_fileName="animation_signup.json"
-            app:lottie_loop="true"
             android:layout_marginBottom="-30dp"
-            >
+            app:lottie_fileName="animation_signup.json"
+            app:lottie_loop="true">
             <!--            app:lottie_autoPlay="true"-->
 
         </com.airbnb.lottie.LottieAnimationView>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/guest_login_layout1"
@@ -44,26 +39,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:text="Guest Login!"
+            android:text="@string/guest_login"
             android:textColor="#070707"
-            android:textSize="32dp"
-            android:textStyle="bold">
-
-        </TextView>
+            android:textSize="32sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginBottom="6dp"
-            android:text="We only require your name to sign you in."
-            android:textSize="14dp"
+            android:text="@string/guest_login_activity_description"
             android:textColor="#070707"
-            >
-
-        </TextView>
+            android:textSize="14sp"/>
 
         <View
             android:layout_width="match_parent"
@@ -75,26 +65,24 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:text="Name"
+            android:text="@string/name"
             android:textColor="@color/white"
-            android:textSize="16dp">
-
-        </TextView>
+            android:textSize="16sp"/>
 
         <EditText
             android:id="@+id/guest_login_name_txt"
             android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="6dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="6dp"
             android:background="@drawable/textbox_round_corners"
-            android:hint="Enter Name"
-            android:paddingLeft="12dp">
-
-        </EditText>
-
+            android:hint="@string/enter_name"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/guest_login_getin_btn"
@@ -103,13 +91,11 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/white"
-            android:text="Get In"
+            android:text="@string/get_in"
             android:textColor="#070707"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            app:cornerRadius="8dp">
-
-        </Button>
+            app:cornerRadius="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,20 +108,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="I want to create an account?  "
-                android:textColor="@color/white"></TextView>
+                android:text="@string/i_want_to_create_an_account"
+                android:textColor="@color/white"
+                android:layout_marginEnd="6dp"/>
 
             <TextView
                 android:id="@+id/guest_login_txt_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="Log in"
-                android:textColor="#070707" />
+                android:text="@string/log_in"
+                android:textColor="#070707"
+                android:focusable="true" />
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

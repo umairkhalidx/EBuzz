@@ -1,277 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".GuestHomePageActivity"
-android:background="#FFFFE0"
-    >
-
-<LinearLayout
-    android:id="@+id/topLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFE0"
+    tools:context=".GuestHomePageActivity">
 
     <LinearLayout
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:fontFamily="@font/balsamiqsans_bold"
-            android:text="Hello, "
-            android:textColor="#070707"
-            android:textSize="32dp">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/guesthomepage_username_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/balsamiqsans_bold"
-            android:text="Guest"
-            android:textColor="#FFC000"
-            android:textSize="32dp">
-
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:fontFamily="@font/balsamiqsans_bold"
-            android:text="We hope you like our new app, Team@Ebuzz"
-            android:textColor="#070707"
-            android:textSize="12dp">
-
-        </TextView>
-
-        <!--        android:text="Warm and Kind Greating form Team @Ebuzz"-->
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical">
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/guesthomepage_notification_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:backgroundTint="#070707"
-                    android:clickable="true"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="Notifications"
-                    android:textColor="@color/white"
-                    android:textSize="14dp"
-                    app:cornerRadius="6dp">
-
-                </Button>
-
-                <Button
-                    android:id="@+id/guesthomepage_requests_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:backgroundTint="#FFC000"
-                    android:clickable="true"
-                    android:text="Requests"
-                    android:textColor="#070707"
-                    android:textSize="14dp"
-                    app:cornerRadius="6dp">
-
-                </Button>
-
-                <Button
-                    android:id="@+id/guesthomepage_groups_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:backgroundTint="#FFC000"
-                    android:clickable="true"
-                    android:text="Groups"
-                    android:textColor="#070707"
-                    android:textSize="14dp"
-                    app:cornerRadius="6dp">
-
-                </Button>
-
-                <Button
-                    android:id="@+id/guesthomepage_pages_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:backgroundTint="#FFC000"
-                    android:clickable="true"
-                    android:text="Pages"
-                    android:textColor="#070707"
-                    android:textSize="14dp"
-                    app:cornerRadius="6dp">
-
-                </Button>
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-    </LinearLayout>
-</LinearLayout>
-
-<LinearLayout
-    android:id="@+id/middleLayout"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:orientation="vertical"
-    app:layout_constraintBottom_toTopOf="@id/bottomLayout"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/topLayout"
-    android:layout_marginTop="16dp"
-    android:gravity="center_vertical|center_horizontal"
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This feature is not available in\nGuest Mode."
-        android:textSize="16dp"
-        android:layout_marginBottom="200dp"
-        >
-
-    </TextView>
-</LinearLayout>
-
-<RelativeLayout
-    android:id="@+id/bottomLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_toStartOf="@+id/cardView2"
-        android:foreground="@drawable/textbox_round_yellow"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="20dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="16dp"
-        android:layout_centerVertical="true"
-        android:backgroundTint="#FFFFE0"
-        >
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal|center_vertical"
-            >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-            <ImageButton
-                android:id="@+id/guesthomepage_home_btn"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/home_btn_filled"
-                android:background="@android:color/transparent"
-                >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/balsamiqsans_bold"
+                android:text="@string/hello"
+                android:textColor="#070707"
+                android:textSize="32sp" />
 
-            </ImageButton>
+            <TextView
+                android:id="@+id/guesthomepage_username_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/balsamiqsans_bold"
+                android:text="@string/guest"
+                android:textColor="#FFC000"
+                android:textSize="32sp" />
 
-            <ImageButton
-                android:id="@+id/guesthomepage_search_btn"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/search_btn"
-                android:background="@android:color/transparent"
-                android:layout_marginStart="16dp"
-                >
+        </LinearLayout>
 
-            </ImageButton>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/guesthomepage_chat_btn"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/chat_btn_unfilled"
-                android:background="@android:color/transparent"
-                android:layout_marginStart="16dp"
-                >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/balsamiqsans_bold"
+                android:text="@string/homepage_greeting_message"
+                android:textColor="#070707"
+                android:textSize="12sp">
 
-            </ImageButton>
+            </TextView>
 
-            <ImageButton
-                android:id="@+id/guesthomepage_profile_btn"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/profile_btn_unfilled"
-                android:background="@android:color/transparent"
-                android:layout_marginStart="16dp"
-                >
-
-            </ImageButton>
+            <!--        android:text="Warm and Kind Greating form Team @Ebuzz"-->
 
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="26dp"
-        android:backgroundTint="@android:color/transparent"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="20dp"
-        android:layout_marginTop="10dp">
-
-        <ImageView
-            android:id="@+id/guesthomepage_add_btn"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#070707"
-            android:src="@drawable/add_btn"
-            android:clickable="true"
-            >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
 
-        </ImageView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
 
-    </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-</RelativeLayout>
+                    <Button
+                        android:id="@+id/guesthomepage_notification_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:backgroundTint="#070707"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/notifications"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:cornerRadius="6dp" />
+
+                    <Button
+                        android:id="@+id/guesthomepage_requests_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:backgroundTint="#FFC000"
+                        android:text="@string/requests"
+                        android:textColor="#070707"
+                        android:textSize="14sp"
+                        app:cornerRadius="6dp" />
+
+                    <Button
+                        android:id="@+id/guesthomepage_groups_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:backgroundTint="#FFC000"
+                        android:text="@string/groups"
+                        android:textColor="#070707"
+                        android:textSize="14sp"
+                        app:cornerRadius="6dp" />
+
+                    <Button
+                        android:id="@+id/guesthomepage_pages_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:backgroundTint="#FFC000"
+                        android:text="@string/pages"
+                        android:textColor="#070707"
+                        android:textSize="14sp"
+                        app:cornerRadius="6dp" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/middleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/bottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:text="This feature is not available in\nGuest Mode."
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@+id/cardView2"
+            android:backgroundTint="#FFFFE0"
+            android:foreground="@drawable/textbox_round_yellow"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/guesthomepage_home_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/home_btn_filled"
+                    android:contentDescription="@string/homepage">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/guesthomepage_search_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/search_btn"
+                    android:contentDescription="@string/search">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/guesthomepage_chat_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/chat_btn_unfilled"
+                    android:contentDescription="@string/chats">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/guesthomepage_profile_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/profile_btn_unfilled"
+                    android:contentDescription="@string/my_profile">
+
+                </ImageButton>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="26dp"
+            android:backgroundTint="@android:color/transparent"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="20dp">
+
+            <ImageView
+                android:id="@+id/guesthomepage_add_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#070707"
+                android:clickable="true"
+                android:src="@drawable/add_btn"
+                android:focusable="true"
+                android:contentDescription="@string/add_post">
+
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

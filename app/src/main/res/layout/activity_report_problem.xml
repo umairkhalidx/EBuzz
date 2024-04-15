@@ -1,135 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="#FFFFE0"
-    android:weightSum="100"
-    >
+    android:orientation="vertical"
+    android:weightSum="100">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        app:cardCornerRadius="34dp"
-        app:cardElevation="0dp"
-        android:backgroundTint="#FFC000"
         android:layout_marginTop="-28dp"
-        >
+        android:backgroundTint="#FFC000"
+        app:cardCornerRadius="34dp"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/reportproblem_back_btn"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
-                android:src="@drawable/back_arrow"
-                android:background="@android:color/transparent"
-                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
                 android:layout_marginTop="50dp"
-                />
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/back_button"
+                android:src="@drawable/back_arrow" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Report Problem"
-                android:textSize="28dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="34dp"
+                android:text="@string/report_problem"
                 android:textColor="#070707"
-                android:textStyle="bold"
-                android:layout_gravity="left"
-                android:layout_marginLeft="34dp"
-                >
-            </TextView>
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Let us know if you are having any issues \nregarding your account."
-                android:textSize="16dp"
-                android:textColor="@color/black"
-                android:layout_gravity="left"
-                android:layout_marginLeft="34dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="34dp"
                 android:layout_marginTop="12dp"
-                >
-            </TextView>
-
+                android:layout_marginEnd="60dp"
+                android:text="@string/report_problem_activity_description"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-
-    <LinearLayout
-        android:id="@+id/reportproblem_layout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/reportproblem_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Issue Regarding :"
-            android:textSize="16dp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginTop="30dp"
-            >
+            android:orientation="vertical">
 
-        </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:text="@string/issue_regarding"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-        <Spinner
-            android:id="@+id/reportproblem_problem_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:background="@drawable/textbox_round_yellow"
-            android:hint="Select Problem"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginTop="6dp"
-            android:paddingLeft="12dp">
+            <Spinner
+                android:id="@+id/reportproblem_problem_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/textbox_round_yellow"
+                android:hint="@string/select_problem"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
 
-        </Spinner>
+            <EditText
+                android:id="@+id/reportproblem_description_txt"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/textbox_round_aboutme"
+                android:gravity="top"
+                android:hint="@string/tell_us_about_your_experience"
+                android:importantForAutofill="no"
+                android:inputType="textLongMessage"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp" />
 
-        <EditText
-            android:id="@+id/reportproblem_description_txt"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@drawable/textbox_round_aboutme"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:hint="Tell us about your experience"
-            android:gravity="top"
-            android:paddingTop="10dp"
-            android:paddingLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="34dp"
-            >
+            <Button
+                android:id="@+id/reportproblem_report_btn"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="22dp"
+                android:backgroundTint="#070707"
+                android:text="@string/report"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
 
-        </EditText>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/reportproblem_report_btn"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="22dp"
-            android:backgroundTint="#070707"
-            android:text="Report"
-            android:textColor="@color/white"
-            app:cornerRadius="8dp"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            >
-
-        </Button>
-
-    </LinearLayout>
-
+    </ScrollView>
 
 </LinearLayout>

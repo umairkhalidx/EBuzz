@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="100"
     android:background="#FFFFE0"
-    >
+    tools:context=".MessagingActivity">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="18"
-        app:cardCornerRadius="34dp"
-        app:cardElevation="0dp"
-        android:backgroundTint="#FFC000"
-        android:layout_marginTop="-28dp"
-        >
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-28dp"
+            android:backgroundTint="#FFC000"
+            app:cardCornerRadius="34dp"
+            app:cardElevation="0dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
                 android:background="#FFC000"
-                android:layout_marginTop="30dp"
-                >
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/messaging_back_btn"
@@ -43,6 +40,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
                     android:background="@android:color/transparent"
+                    android:contentDescription="@string/back_button"
                     android:src="@drawable/back_arrow" />
 
                 <androidx.cardview.widget.CardView
@@ -58,10 +56,9 @@
                         android:id="@+id/messaging_user_img"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:contentDescription="@string/user_image"
                         android:scaleType="centerCrop"
-                        android:src="@mipmap/ic_launcher">
-
-                    </ImageView>
+                        android:src="@mipmap/ic_launcher" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -71,12 +68,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
+                    android:layout_toStartOf="@+id/messaging_audiocall_btn"
                     android:layout_toEndOf="@+id/cardView"
-                    android:text="Username"
+                    android:text="@string/username"
                     android:textColor="#070707"
-                    android:textSize="18dp">
-
-                </TextView>
+                    android:textSize="18sp" />
 
                 <ImageButton
                     android:id="@+id/messaging_audiocall_btn"
@@ -85,11 +81,9 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="20dp"
                     android:layout_toStartOf="@+id/messaging_videocall_btn"
-                    android:src="@drawable/audio_call_btn"
                     android:backgroundTint="@android:color/transparent"
-                    >
-
-                </ImageButton>
+                    android:contentDescription="@string/audio_call"
+                    android:src="@drawable/audio_call_btn" />
 
                 <ImageButton
                     android:id="@+id/messaging_videocall_btn"
@@ -98,207 +92,156 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="30dp"
-                    android:src="@drawable/video_call_btn"
                     android:backgroundTint="@android:color/transparent"
-                    >
-
-                </ImageButton>
+                    android:contentDescription="@string/video_call"
+                    android:src="@drawable/video_call_btn" />
 
             </RelativeLayout>
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="77"
-        >
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/group_messaging_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="6"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="0dp"
-        android:backgroundTint="#FFC000"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        >
-        <RelativeLayout
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#FFC000"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/messaging_camera_btn"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:backgroundTint="@color/black"
-                app:cardCornerRadius="50dp"
-                app:cardElevation="0dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="7dp"
-                >
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/messaging_camera_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="7dp"
+                    android:backgroundTint="@color/black"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="0dp">
+
+                    <ImageButton
+                        android:id="@+id/messaging_camera_btn_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:backgroundTint="@android:color/transparent"
+                        android:contentDescription="@string/open_camera"
+                        android:padding="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/camera_btn" />
+
+                </androidx.cardview.widget.CardView>
+
+                <EditText
+                    android:id="@+id/messaging_message_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_toStartOf="@+id/messaging_mic_btn"
+                    android:layout_toEndOf="@+id/messaging_camera_btn"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/message"
+                    android:importantForAutofill="no"
+                    android:inputType="textLongMessage"
+                    android:textSize="18sp">
+
+                </EditText>
 
                 <ImageButton
-                    android:id="@+id/messaging_camera_btn_1"
-                    android:layout_width="match_parent"
+                    android:id="@+id/messaging_mic_btn"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/camera_btn"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:padding="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/messaging_gallery_btn"
                     android:backgroundTint="@android:color/transparent"
-                    >
-
-                </ImageButton>
-
-            </androidx.cardview.widget.CardView>
-
-            <EditText
-                android:id="@+id/messaging_message_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="6dp"
-                android:layout_toStartOf="@+id/messaging_mic_btn"
-                android:layout_toEndOf="@+id/messaging_camera_btn"
-                android:background="@android:color/transparent"
-                android:hint="Message"
-                android:textSize="18sp">
-
-            </EditText>
-
-            <ImageButton
-                android:id="@+id/messaging_mic_btn"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/messaging_gallery_btn"
-                android:backgroundTint="@android:color/transparent"
-                android:src="@drawable/mic_btn"
-                >
-
-            </ImageButton>
-
-            <ImageButton
-                android:id="@+id/messaging_gallery_btn"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/messaging_send_btn"
-                android:backgroundTint="@android:color/transparent"
-                android:src="@drawable/image_btn">
-
-            </ImageButton>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/messaging_send_btn"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:backgroundTint="@color/white"
-                android:layout_marginEnd="10dp"
-                app:cardCornerRadius="50dp"
-                app:cardElevation="0dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="7dp"
-                >
+                    android:contentDescription="@string/record_audio"
+                    android:src="@drawable/mic_btn" />
 
                 <ImageButton
-                    android:id="@+id/messaging_send_btn_1"
-                    android:layout_width="match_parent"
+                    android:id="@+id/messaging_gallery_btn"
+                    android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/send_btn"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:paddingBottom="6dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="4dp"
-                    android:paddingLeft="8dp"
-                    android:rotation="330"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/messaging_send_btn"
                     android:backgroundTint="@android:color/transparent"
-                    >
+                    android:contentDescription="@string/open_gallery"
+                    android:src="@drawable/image_btn" />
 
-                </ImageButton>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/messaging_send_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="7dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="0dp">
 
-            </androidx.cardview.widget.CardView>
+                    <ImageButton
+                        android:id="@+id/messaging_send_btn_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:backgroundTint="@android:color/transparent"
+                        android:importantForAccessibility="no"
+                        android:paddingStart="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingEnd="4dp"
+                        android:paddingBottom="6dp"
+                        android:rotation="330"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/send_btn" />
 
+                </androidx.cardview.widget.CardView>
 
-        </RelativeLayout>
+            </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
 
-
-</LinearLayout>
-
-
-
-
-<!--<LinearLayout-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--android:orientation="horizontal"-->
-<!--    >-->
-
-<!--<ImageButton-->
-<!--    android:layout_width="50dp"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:src="@drawable/video_call_btn"-->
-<!--    android:backgroundTint="@android:color/transparent"-->
-<!--    >-->
-
-<!--</ImageButton>-->
-
-<!--<EditText-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:layout_width="220dp"-->
-<!--    android:hint="Message"-->
-<!--    android:textSize="14sp"-->
-<!--    android:background="@android:color/transparent"-->
-<!--    android:layout_marginLeft="6dp"-->
-<!--    >-->
-
-<!--</EditText>-->
-
-<!--<ImageButton-->
-<!--    android:layout_width="30dp"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:src="@drawable/video_call_btn"-->
-<!--    android:backgroundTint="@android:color/transparent"-->
-<!--    >-->
-
-<!--</ImageButton>-->
-
-<!--<ImageButton-->
-<!--    android:layout_width="30dp"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:src="@drawable/video_call_btn"-->
-<!--    android:backgroundTint="@android:color/transparent"-->
-<!--    >-->
-
-<!--</ImageButton>-->
-
-<!--<ImageButton-->
-<!--    android:layout_width="30dp"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:src="@drawable/video_call_btn"-->
-<!--    android:backgroundTint="@android:color/transparent"-->
-<!--    >-->
-
-<!--</ImageButton>-->
-
-
-<!--</LinearLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
