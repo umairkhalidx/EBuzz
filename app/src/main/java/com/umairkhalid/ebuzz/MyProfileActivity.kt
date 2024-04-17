@@ -25,9 +25,15 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
     private lateinit var transparentView : View
     private lateinit var click_layout : LinearLayout
 
+    private var current_layout: Int = -1
+    private lateinit var comment_backBtnId: ImageButton
+    private lateinit var send_backBtnId: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_profile)
+
+        current_layout = 1
 
         val back_btn = findViewById<ImageButton>(R.id.myprofile_back_btn)
         val edit_btn =findViewById<ImageButton>(R.id.myprofile_edit_btn)
@@ -116,6 +122,8 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
 
         if(operation==1){
 
+            current_layout = 2
+
             send_layout.visibility= View.GONE
             click_layout.visibility= View.VISIBLE
             comments_layout.visibility= View.VISIBLE
@@ -127,12 +135,12 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
 
             comments_layout.post{
 
-                val backBtnId = comments_layout.findViewById<ImageButton>(R.id.comments_back_btn)
+                comment_backBtnId = comments_layout.findViewById(R.id.comments_back_btn)
                 val send_btn = comments_layout.findViewById<ImageButton>(R.id.comments_send_btn_1)
                 val message_txt = comments_layout.findViewById<EditText>(R.id.comments_comment_txt)
 
 
-                backBtnId?.setOnClickListener {
+                comment_backBtnId.setOnClickListener {
 
                     transparentView.visibility = View.GONE
 
@@ -180,6 +188,8 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
 
         }else{
 
+            current_layout = 3
+
             send_layout.visibility= View.VISIBLE
             click_layout.visibility= View.VISIBLE
             comments_layout.visibility= View.GONE
@@ -191,14 +201,14 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
 
             send_layout.post{
 
-                val backBtnId = send_layout.findViewById<ImageButton>(R.id.send_back_btn)
+                send_backBtnId = send_layout.findViewById(R.id.send_back_btn)
                 val search_btn = send_layout.findViewById<ImageButton>(R.id.send_searchbar_btn)
                 val search_txt = send_layout.findViewById<EditText>(R.id.send_searchbar_txt)
                 val send_btn = send_layout.findViewById<Button>(R.id.send_send_btn)
                 val repost_btn = send_layout.findViewById<Button>(R.id.send_repost_btn)
 
 
-                backBtnId?.setOnClickListener {
+                send_backBtnId.setOnClickListener {
 
                     transparentView.visibility = View.GONE
 
@@ -243,6 +253,21 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
 
             }
 
+        }
+
+    }
+    override fun onBackPressed() {
+
+        if (current_layout == 1) {
+            this.finish()
+            super.onBackPressed()
+        } else if (current_layout == 2) {
+            current_layout = 1
+            comment_backBtnId.performClick()
+
+        } else if (current_layout == 3) {
+            current_layout = 1
+            send_backBtnId.performClick()
         }
 
     }

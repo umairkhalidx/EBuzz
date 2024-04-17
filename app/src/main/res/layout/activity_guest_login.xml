@@ -83,7 +83,9 @@
             android:inputType="textPersonName"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"
+            />
 
         <Button
             android:id="@+id/guest_login_getin_btn"

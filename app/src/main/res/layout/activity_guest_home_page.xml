@@ -148,6 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="200dp"
+            android:textColor="@color/black"
             android:text="This feature is not available in\nGuest Mode."
             android:textSize="16sp"/>
 

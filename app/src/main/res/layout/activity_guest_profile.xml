@@ -82,7 +82,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="110dp"
                 android:layout_height="110dp"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@android:color/transparent"
                 app:cardCornerRadius="44dp">
 
                 <ImageView
@@ -177,6 +177,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:maxHeight="62dp"
+            android:textColor="@color/black"
             android:text="@string/about_me_description" />
 
     </LinearLayout>

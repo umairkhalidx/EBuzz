@@ -17,7 +17,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="34dp"
                 android:text="@string/create_page_activity_description"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -97,7 +97,9 @@
                 android:inputType="text"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_color"
+                />
 
             <TextView
                 android:layout_width="match_parent"
@@ -137,6 +139,8 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="10dp"
                 android:textColor="@color/black"
+                android:textColorHint="@color/hint_color"
+
                 />
 
             <Button

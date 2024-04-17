@@ -127,16 +127,17 @@
                     <LinearLayout
                         android:id="@+id/linearLayout"
                         android:layout_width="wrap_content"
-                        android:layout_height="130dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_marginStart="20dp"
+                        android:layout_marginBottom="10dp"
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:backgroundTint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
                             app:cardCornerRadius="50dp">
 
                             <ImageView
@@ -210,6 +211,7 @@
                         android:layout_marginTop="4dp"
                         android:layout_marginBottom="10dp"
                         android:maxHeight="62dp"
+                        android:textColor="@color/black"
                         android:text="@string/about_me_description" />
 
                 </LinearLayout>
@@ -417,7 +419,7 @@
                                     android:layout_marginTop="7dp"
                                     android:layout_marginEnd="2dp"
                                     android:layout_marginBottom="7dp"
-                                    android:backgroundTint="@color/black"
+                                    android:backgroundTint="@android:color/transparent"
                                     app:cardCornerRadius="50dp"
                                     app:cardElevation="0dp">
 
@@ -440,6 +442,7 @@
                                     android:layout_toEndOf="@+id/comments_userimage"
                                     android:background="@android:color/transparent"
                                     android:hint="@string/add_a_comment"
+                                    android:textColorHint="@color/hint_color"
                                     android:importantForAutofill="no"
                                     android:inputType="textMultiLine"
                                     android:textColor="@color/black"
@@ -612,6 +615,7 @@
                                 android:layout_marginStart="30dp"
                                 android:background="@drawable/textbox_round_yellow_no_left"
                                 android:hint="@string/search"
+                                android:textColorHint="@color/hint_color"
                                 android:paddingStart="16dp"
                                 android:paddingEnd="12dp"
                                 android:textColor="@color/black" />

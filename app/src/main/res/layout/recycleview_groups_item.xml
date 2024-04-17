@@ -40,6 +40,7 @@
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
                         app:cardCornerRadius="50dp"
+                        android:backgroundTint="@android:color/transparent"
                         app:cardElevation="0dp">
 
                         <ImageView
@@ -148,6 +149,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
+                        android:backgroundTint="@android:color/transparent"
                         app:cardCornerRadius="50dp"
                         app:cardElevation="0dp">
 

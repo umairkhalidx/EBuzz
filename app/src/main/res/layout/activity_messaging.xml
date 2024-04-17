@@ -49,6 +49,7 @@
                     android:layout_height="50dp"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/messaging_back_btn"
+                    android:backgroundTint="@android:color/transparent"
                     app:cardCornerRadius="50dp"
                     app:cardElevation="0dp">
 
@@ -181,6 +182,7 @@
                     android:layout_toEndOf="@+id/messaging_camera_btn"
                     android:background="@android:color/transparent"
                     android:hint="@string/message"
+                    android:textColorHint="@color/hint_color"
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine"
                     android:textColor="@color/black"

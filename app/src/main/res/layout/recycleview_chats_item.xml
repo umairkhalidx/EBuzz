@@ -18,7 +18,7 @@
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/dark_yellow"
+            android:backgroundTint="@android:color/transparent"
             app:cardCornerRadius="30dp"
             app:cardElevation="0dp">
 
@@ -45,8 +45,10 @@
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/chats_audiocall_btn"
                 android:text="@string/username"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/bright_black"
+                />
 
             <ImageButton
                 android:id="@+id/chats_audiocall_btn"
