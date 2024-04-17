@@ -98,7 +98,9 @@
                     android:hint="@string/search"
                     android:paddingStart="16dp"
                     android:paddingEnd="12dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    />
 
             </RelativeLayout>
 
