@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "81888878992",
+    "firebase_url": "https://ebuzz-social-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ebuzz-social",
+    "storage_bucket": "ebuzz-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81888878992:android:409fb6892e69cf99a2d315",
+        "android_client_info": {
+          "package_name": "com.umairkhalid.ebuzz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV2IeOjCFeY6VipSolpl8xIgM16Fk4Thc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

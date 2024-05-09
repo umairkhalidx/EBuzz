@@ -87,8 +87,7 @@
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/hint_color"
-            />
+            android:textColorHint="@color/hint_color" />
 
         <Button
             android:id="@+id/aboutme_update_btn"

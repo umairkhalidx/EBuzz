@@ -1,8 +1,12 @@
 package com.umairkhalid.ebuzz
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -16,8 +20,24 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 
 class MyProfileActivity : AppCompatActivity(),ClickListner {
+
+    private var  mAuth = FirebaseAuth.getInstance();
+
+    private val PICK_IMAGE_REQUEST = 71
+    private var type:Int =0
+    private var file_path: Uri? = null
+    private lateinit var user_img :ImageView
+    private lateinit var cover_img:ImageView
+
 
     private lateinit var comments_layout : LinearLayout
     private lateinit var send_layout : LinearLayout
@@ -38,10 +58,11 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
         val back_btn = findViewById<ImageButton>(R.id.myprofile_back_btn)
         val edit_btn =findViewById<ImageButton>(R.id.myprofile_edit_btn)
         val logout_btn =findViewById<Button>(R.id.myprofile_logout_btn)
-        val city = findViewById<TextView>(R.id.myprofile_city_txt)
+        val username = findViewById<TextView>(R.id.myprofile_username_txt)
+        val province = findViewById<TextView>(R.id.myprofile_city_txt)
         val friends_list_btn = findViewById<Button>(R.id.myprofile_friends_list_btn)
-        val user_img = findViewById<ImageView>(R.id.myprofile_user_img)
-        val cover_img =findViewById<ImageView>(R.id.myprofile_cover_img)
+        user_img = findViewById<ImageView>(R.id.myprofile_user_img)
+        cover_img =findViewById<ImageView>(R.id.myprofile_cover_img)
         val mypage_btn = findViewById<Button>(R.id.myprofile_mypage_btn)
         val settings_btn = findViewById<Button>(R.id.myprofile_settings_btn)
         val aboutme_btn = findViewById<Button>(R.id.myprofile_aboutme_btn)
@@ -65,6 +86,13 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
 //            startActivity(intent)
             onBackPressed()
             finish()
+        }
+        logout_btn.setOnClickListener{
+            mAuth.signOut()
+            finish()
+            finishAffinity();
+            val nextActivityIntent = Intent(this, LoginActivity::class.java)
+            startActivity(nextActivityIntent)
         }
 
         edit_btn.setOnClickListener{
@@ -92,7 +120,59 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
             startActivity(intent)
         }
 
-        var adapter_data_list : ArrayList<recycleview_post_data> = ArrayList()
+        var database = FirebaseDatabase.getInstance()
+        val my_ref = database.getReference("users")
+        var currentUser = FirebaseAuth.getInstance().currentUser
+        val userId = currentUser?.uid
+        var pic_url:String=""
+        var cover_url:String=""
+
+        if(userId!=null) {
+
+            my_ref.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val name = dataSnapshot.child(userId).child("name").value.toString()
+                    val city = dataSnapshot.child(userId).child("province").value.toString()
+                    val about = dataSnapshot.child(userId).child("about").value.toString()
+                    pic_url = dataSnapshot.child(userId).child("picture").value.toString()
+                    cover_url = dataSnapshot.child(userId).child("cover").value.toString()
+                    username.text = name
+                    province.text = city
+
+                    if(about!="null"){
+                        abooutme_txt.text=about
+                    }
+                    if (pic_url.length>10) {
+                        Picasso.get().load(pic_url).into(user_img)
+                    }
+                    if (cover_url.length>10 ) {
+                        Picasso.get().load(cover_url).into(cover_img)
+
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle error
+                    Log.d("TAG", "Unable to retrieve Data")
+                }
+            })
+        }
+
+
+
+        user_img.setOnClickListener {
+            type=1
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "image/*"
+            startActivityForResult(intent, PICK_IMAGE_REQUEST)
+        }
+        cover_img.setOnClickListener{
+            type=2
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "image/*"
+            startActivityForResult(intent, PICK_IMAGE_REQUEST)
+
+        }
 
         val recyclerView : RecyclerView = findViewById(R.id.myprofile_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this,
@@ -100,24 +180,168 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
             false
         )
 
-        val v1  = recycleview_post_data("","Username","","","","",1,0)
-        val v2  = recycleview_post_data("","Username","","","","",0,0)
-        val v3  = recycleview_post_data("","Username","","","","",1,0)
-        val v4  = recycleview_post_data("","Username","","","","",1,0)
+        var adapter_data_list : ArrayList<recycleview_post_data> = ArrayList()
+
+        val databaseref = FirebaseDatabase.getInstance()
+        val curr = mAuth.currentUser
+        val id= curr?.uid.toString()
+        var postRef = databaseref.getReference("users").child(id).child("posts")
+
+        postRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                for (Snapshot in dataSnapshot.children) {
+                    val userID = Snapshot.child("userID").getValue(String::class.java)
+                    val postID = Snapshot.child("postID").getValue(String::class.java)
+                    val type = Snapshot.child("type").getValue(String::class.java)
+                    val text = Snapshot.child("text").getValue(String::class.java)
+                    val photo = Snapshot.child("photo").getValue(String::class.java)
+                    val video = Snapshot.child("video").getValue(String::class.java)
+                    val time = Snapshot.child("time").getValue(String::class.java)
+                    val description_txt = Snapshot.child("text").getValue(String::class.java)
+
+                    var postType = -1
+                    if(type == "Text"){
+                        postType= 0
+                    }else if(type == "Photo"){
+                        postType= 1
+                    }
+                    else if(type == "Video"){
+                        postType= 2
+                    }
+                    val databaseUser = FirebaseDatabase.getInstance()
+                    val usersRef = databaseUser.getReference("users")
+
+                    usersRef.child(userID.toString()).addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                val userName = dataSnapshot.child("name").getValue(String::class.java)
+                                val userPicture = dataSnapshot.child("picture").getValue(String::class.java)
+
+                                val postData  = recycleview_post_data(userID,postID,userPicture,userName,photo,"",text,description_txt,postType,0)
+                                adapter_data_list.add(postData)
+
+                                // 3- Adapter
+                                val adapter = recycleview_post_adapter(adapter_data_list,this@MyProfileActivity)
+                                recyclerView.adapter = adapter
+                            }
+                        }
+
+                        override fun onCancelled(databaseError: DatabaseError) {
+                            // Handle error
+                            Log.d("TAG", "Error getting user data: ${databaseError.message}")
+                        }
+                    })
+                }
 
 
-        adapter_data_list.add(v1)
-        adapter_data_list.add(v2)
-        adapter_data_list.add(v3)
-        adapter_data_list.add(v4)
+            }
 
-
-
-        // 3- Adapter
-        val adapter = recycleview_post_adapter(adapter_data_list,this)
-        recyclerView.adapter = adapter
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle error
+                Log.d("Error", databaseError.message)
+                Toast.makeText(this@MyProfileActivity,"Unable to Fetch Data",Toast.LENGTH_LONG).show()
+            }
+        })
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
+            file_path = data.data
+            // Set the selected image to the profileImageView
+            if(type==1){
+
+                Picasso.get().load(file_path).into(user_img)
+
+                val my_database = FirebaseDatabase.getInstance()
+                var my_ref = my_database.getReference("users")
+                val currUser = mAuth.currentUser
+                val userId= currUser?.uid.toString()
+
+                val imageURL = file_path.toString()
+                my_ref.child(userId).child("picture").setValue(imageURL)
+
+
+                val storageRef = FirebaseStorage.getInstance().reference
+
+                val profileImageRef = storageRef.child("profile_images/$userId.jpg")
+                val uploadTask = profileImageRef.putFile(file_path!!)
+
+                uploadTask.addOnSuccessListener { taskSnapshot ->
+                    // Image uploaded successfully, now get the download URL
+                    profileImageRef.downloadUrl.addOnSuccessListener { uri ->
+                        // Save download URL to Firebase Realtime Database
+                        val image_url = uri.toString()
+                        val database = FirebaseDatabase.getInstance()
+                        val myRef = database.getReference("users/$userId/picture")
+
+                        myRef.setValue(image_url).addOnSuccessListener {
+                            Toast.makeText(this, "Profile picture updated!", Toast.LENGTH_SHORT).show()
+                        }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(this, "Unable to Upload,Please Try Again", Toast.LENGTH_SHORT).show()
+                                Log.d("TAG", "Failed To Upload Profile Image")
+
+                            }
+                    }
+                }.addOnFailureListener { e ->
+                    Toast.makeText(this, "Unable to Upload,Please Try Again", Toast.LENGTH_SHORT).show()
+                    Log.d("TAG", "Failed To Upload Profile Image")
+
+                }
+
+            }
+            else if(type==2){
+
+                Picasso.get().load(file_path).into(cover_img)
+
+
+                val my_database = FirebaseDatabase.getInstance()
+                var my_ref = my_database.getReference("users")
+                val currUser = mAuth.currentUser
+                val userId= currUser?.uid.toString()
+
+                val imageURL = file_path.toString()
+                my_ref.child(userId).child("cover").setValue(imageURL)
+
+
+                val storageRef = FirebaseStorage.getInstance().reference
+
+                val profileImageRef = storageRef.child("cover_images/$userId.jpg")
+                val uploadTask = profileImageRef.putFile(file_path!!)
+
+                uploadTask.addOnSuccessListener { taskSnapshot ->
+                    // Image uploaded successfully, now get the download URL
+                    profileImageRef.downloadUrl.addOnSuccessListener { uri ->
+                        // Save download URL to Firebase Realtime Database
+                        val image_url = uri.toString()
+                        val database = FirebaseDatabase.getInstance()
+                        val myRef = database.getReference("users/$userId/cover")
+
+                        myRef.setValue(image_url).addOnSuccessListener {
+                            Toast.makeText(this, "Cover updated!", Toast.LENGTH_SHORT).show()
+                        }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(this, "Unable to Upload,Please Try Again", Toast.LENGTH_SHORT).show()
+                                Log.d("TAG", "Failed To Upload Cover Image")
+
+                            }
+                    }
+                }.addOnFailureListener { e ->
+                Toast.makeText(this, "Unable to Upload,Please Try Again", Toast.LENGTH_SHORT).show()
+                    Log.d("TAG", "Failed To Upload Cover Image")
+
+                }
+
+            }
+        }
+    }
+
+
     override fun onCLick_fun(position: Int, username: String, operation: Int) {
 
         if(operation==1){

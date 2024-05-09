@@ -100,10 +100,10 @@ class UserProfileActivity : AppCompatActivity(), ClickListner{
             false
         )
 
-        val v1  = recycleview_post_data("","Username","","","","",1,0)
-        val v2  = recycleview_post_data("","Username","","","","",0,0)
-        val v3  = recycleview_post_data("","Username","","","","",1,0)
-        val v4  = recycleview_post_data("","Username","","","","",1,0)
+        val v1  = recycleview_post_data("","","","Username","","","","",1,0)
+        val v2  = recycleview_post_data("","","","Username","","","","",0,0)
+        val v3  = recycleview_post_data("","","","Username","","","","",1,0)
+        val v4  = recycleview_post_data("","","","Username","","","","",1,0)
 
 
         adapter_data_list.add(v1)

@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.umairkhalid.ebuzz" />
+                  <option name="mobileSdkAppId" value="1:81888878992:android:409fb6892e69cf99a2d315" />
+                  <option name="projectId" value="ebuzz-social" />
+                  <option name="projectNumber" value="81888878992" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.UnderlineSpan
+import android.util.Log
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.AdapterView
@@ -19,12 +20,16 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import com.airbnb.lottie.LottieAnimationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import java.util.Calendar
 
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var mDateSetListener: DatePickerDialog.OnDateSetListener
+    private var  mAuth = FirebaseAuth.getInstance();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,11 +61,35 @@ class SignupActivity : AppCompatActivity() {
 
 
         next_btn.setOnClickListener{
-            layout1.visibility = View.GONE
-            layout2.visibility = View.VISIBLE
-            layout3.visibility = View.VISIBLE
-            val slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up_layout)
-            layout2.startAnimation(slideUp)
+            val name_txt=name.text.toString().trim()
+            val email_txt=email.text.toString().trim()
+            val pass_txt=password.text.toString().trim()
+            val confirmPass_txt=confirmPass.text.toString().trim()
+
+            if (name_txt.isNotEmpty() && email_txt.isNotEmpty() && pass_txt.isNotEmpty() && confirmPass_txt.isNotEmpty() )
+            {
+                val emailPattern = "[a-zA-Z0-9._-]+@gmail.com"
+
+                if(pass_txt.length < 8 ){
+                    Toast.makeText(this,"Password too small", Toast.LENGTH_LONG).show()
+                }
+                else if(!email_txt.matches(emailPattern.toRegex())){
+                    Toast.makeText(this,"Invalid Email", Toast.LENGTH_LONG).show()
+                }
+                else if(pass_txt!=confirmPass_txt){
+                    Toast.makeText(this,"Password Do not Match", Toast.LENGTH_LONG).show()
+                }
+                else{
+                    layout1.visibility = View.GONE
+                    layout2.visibility = View.VISIBLE
+                    layout3.visibility = View.VISIBLE
+                    val slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up_layout)
+                    layout2.startAnimation(slideUp)
+                }
+            }
+            else{
+                Toast.makeText(this,"Please fill in all fields", Toast.LENGTH_LONG).show()
+            }
         }
 
         login_txt_1.setOnClickListener{
@@ -119,9 +148,44 @@ class SignupActivity : AppCompatActivity() {
 
 
         signup_btn.setOnClickListener{
-            val intent = Intent(this, OTPActivity::class.java)
-            startActivity(intent)
-            finish()
+
+            val name_txt=name.text.toString().trim()
+            val email_txt=email.text.toString().trim()
+            val pass_txt=password.text.toString().trim()
+            val confirmPass_txt=confirmPass.text.toString().trim()
+
+            val contact_txt=contact.text.toString().trim()
+            val country_txt= country_spinner.selectedItem.toString().trim()
+            val province_txt= province_spinner.selectedItem.toString().trim()
+            val age_txt = age.text.toString()
+
+            if (contact_txt.isNotEmpty() && country_txt.isNotEmpty() && province_txt.isNotEmpty() && (age_txt != "Enter Your age"))
+            {
+
+                if(contact_txt.length.toInt() != 11 || !contact_txt.matches("^[0-9]+\$".toRegex())){
+                    Toast.makeText(this,"Invalid Contact Info",Toast.LENGTH_LONG).show()
+                }
+                else if(country_txt=="Select Country"){
+                    Toast.makeText(this,"Kindly Select a Country",Toast.LENGTH_LONG).show()
+                }
+                else if(province_txt=="Select Province"){
+                    Toast.makeText(this,"Kindly Select a Province",Toast.LENGTH_LONG).show()
+                }
+                else{
+                    val userdata=UserData("",name_txt,email_txt,contact_txt,country_txt,province_txt,age_txt,pass_txt,"","")
+                    signupFunc(userdata)
+//                    val intent = Intent(this, OTPActivity::class.java)
+//                    startActivity(intent)
+//                    finish()
+
+                }
+            }
+            else{
+                Toast.makeText(this,"Please fill in all fields", Toast.LENGTH_LONG).show()
+            }
+//            val intent = Intent(this, OTPActivity::class.java)
+//            startActivity(intent)
+//            finish()
         }
 
         login_txt_2.setOnClickListener{
@@ -155,6 +219,51 @@ class SignupActivity : AppCompatActivity() {
             age.setTextColor(Color.BLACK)
         }
 
+    }
 
+    fun signupFunc(userData: UserData){
+        mAuth.createUserWithEmailAndPassword(userData.email, userData.password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Log.d("TAG", "createUserWithEmail:success")
+
+                    val database = FirebaseDatabase.getInstance()
+                    var userRef = database.getReference("users")
+                    val curr = mAuth.currentUser
+                    val id= curr?.uid.toString()
+
+                    userRef.child(id).setValue(null)
+                    userRef.child(id).child("userID").setValue(id)
+                    userRef.child(id).child("name").setValue(userData.name)
+                    userRef.child(id).child("email").setValue(userData.email)
+                    userRef.child(id).child("country").setValue(userData.country)
+                    userRef.child(id).child("province").setValue(userData.province)
+                    userRef.child(id).child("contact").setValue(userData.contact)
+                    userRef.child(id).child("age").setValue(userData.age)
+                    userRef.child(id).child("profiletype").setValue("Private")
+                    userRef.child(id).child("category").setValue("Creator")
+
+
+                    val new_email = userData.email.replace(".", ",")
+                    userRef = database.getReference("credentials")
+                    userRef.child(new_email).setValue(null)
+                    userRef.child(new_email).child("email").setValue(userData.email)
+                    userRef.child(new_email).child("password").setValue(userData.password)
+                    userRef.child(new_email).child("userID").setValue(id)
+
+
+                    Toast.makeText(this,"Signup Successful",Toast.LENGTH_LONG).show()
+                    var secondActivityIntent = Intent(this, HomePageActivity::class.java)
+                    startActivity(secondActivityIntent)
+                    finish()
+
+                } else {
+                    Toast.makeText(this,"Error While Signing Up",Toast.LENGTH_LONG).show()
+//                    var secondActivityIntent = Intent(this, SignupActivity::class.java)
+//                    startActivity(secondActivityIntent)
+//                    finish()
+                    Log.w("TAG", "createUserWithEmail:failure", task.exception)
+                }
+            }
     }
 }
