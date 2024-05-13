@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class recycleview_friendslist_adapter(val itemslist: ArrayList<recycleview_friendslist_data>,private val listener: ClickListner)
     : RecyclerView.Adapter<recycleview_friendslist_adapter.friendslist_recycler_viewholder>()
@@ -41,10 +42,16 @@ class recycleview_friendslist_adapter(val itemslist: ArrayList<recycleview_frien
 //        Glide.with(holder.itemView.context)
 //            .load(itemslist[position].img)
 //            .into(holder.display_pic)
+        try {
+            Picasso.get().load(itemslist[position].img).into(holder.user_img)
+        } catch (e: Exception) {
+
+        }
+
         holder.username.setText(itemslist[position].username)
 
         holder.viewmore_btn.setOnClickListener{
-            listener.onCLick_fun(position,"",0)
+            listener.onCLick_fun(position,itemslist[position].id.toString(),0)
         }
 
     }

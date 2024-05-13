@@ -1,5 +1,6 @@
 package com.umairkhalid.ebuzz
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,40 +9,27 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Callback
+import com.squareup.picasso.Picasso
 
-class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_data>,private val listener: ClickListner)
+class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_data>,private val listener: ClickListener_Groups)
     : RecyclerView.Adapter<recycleview_groups_adapter.groups_recycler_viewholder>()
 {
     inner class groups_recycler_viewholder(itemView: View) : RecyclerView.ViewHolder(itemView){
         lateinit var group_layout_1 : LinearLayout
-        lateinit var group_layout_2 : LinearLayout
         lateinit var group_img_1 : ImageView
         lateinit var groupname_1 : TextView
-        lateinit var group_img_2 : ImageView
-        lateinit var groupname_2 : TextView
         var index : Int = 0
-
         lateinit var leavegroup_btn_1 : Button
-        lateinit var leavegroup_btn_2 : Button
         lateinit var viewmore_btn_1 : Button
-        lateinit var viewmore_btn_2 : Button
 
 
         init {
             group_layout_1 = itemView.findViewById(R.id.groups_layout_1)
-            group_layout_2 = itemView.findViewById(R.id.groups_layout_2)
-//            groupLayout1.isClickable = false
-//            groupLayout1.isFocusable = false
             group_img_1= itemView.findViewById(R.id.groups_groupimage_1)
             groupname_1= itemView.findViewById(R.id.groups_groupname_1)
-            group_img_2= itemView.findViewById(R.id.groups_groupimage_2)
-            groupname_2= itemView.findViewById(R.id.groups_groupname_2)
-
             leavegroup_btn_1 = itemView.findViewById(R.id.groups_leave_btn_1)
-            leavegroup_btn_2 = itemView.findViewById(R.id.groups_leave_btn_2)
             viewmore_btn_1 = itemView.findViewById(R.id.groups_viewmore_btn_1)
-            viewmore_btn_2 = itemView.findViewById(R.id.groups_viewmore_btn_2)
-
         }
 
     }
@@ -59,74 +47,45 @@ class recycleview_groups_adapter(val itemslist: ArrayList<recycleview_groups_dat
 
     override fun onBindViewHolder(holder: groups_recycler_viewholder, position: Int) {
 
+        // Setting Group Image
 //        Glide.with(holder.itemView.context)
-//            .load(itemslist[position].img)
-//            .into(holder.display_pic)
+//            .load(itemslist[position].groupimage_1)
+//            .into(holder.group_img_1)
+//        Picasso.get().load(itemslist[position].groupimage_1).into(holder.group_img_1)
+        Picasso.get()
+            .load(itemslist[position].groupimage_1.toString())
+            .into(holder.group_img_1, object : Callback {
+                override fun onSuccess() {
+                    // Image loaded successfully
+                }
+
+                override fun onError(e: Exception?) {
+                    // Error loading image
+                    Log.e("Picasso", "Error loading image: ${e?.message}")
+                }
+            })
+        // Setting the rest
         holder.index=itemslist[position].count
+        holder.groupname_1.text = itemslist[position].groupname_1
 
+        val gID = itemslist[position].groupID
+        val gName = itemslist[position].groupname_1.toString()
+        val gImage = itemslist[position].groupimage_1.toString()
 
-        if(holder.index==1) {
-            holder.groupname_1.setText(itemslist[position].groupname_1)
-            holder.group_layout_2.visibility=View.INVISIBLE
-//
-//            holder.leavegroup_btn_1.setOnClickListener{
-//                listener.onCLick_fun(position,"")
-//            }
-            holder.group_img_1.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
-            holder.groupname_1.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
-            holder.leavegroup_btn_1.setOnClickListener{
-                listener.onCLick_fun(position,"",1)
-            }
-            holder.viewmore_btn_1.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
+        holder.group_img_1.setOnClickListener{
+            listener.onClickGroups_fun(position,"",0, gID, gName, gImage)
+        }
 
+        holder.groupname_1.setOnClickListener{
+            listener.onClickGroups_fun(position,"",0, gID, gName, gImage)
+        }
 
-        }else{
-            holder.groupname_1.setText(itemslist[position].groupname_1)
-            holder.groupname_2.setText(itemslist[position].groupname_2)
+        holder.leavegroup_btn_1.setOnClickListener{
+            listener.onClickGroups_fun(position,"",1, gID, gName, gImage)
+        }
 
-//            holder.leavegroup_btn_1.setOnClickListener{
-//                listener.onCLick_fun(position,"")
-//            }
-//            holder.leavegroup_btn_2.setOnClickListener{
-//                listener.onCLick_fun(position,"")
-//            }
-
-            holder.group_img_1.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
-
-            holder.group_img_2.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
-
-            holder.groupname_1.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
-
-            holder.groupname_2.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
-
-            holder.viewmore_btn_1.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
-
-            holder.viewmore_btn_1.setOnClickListener{
-                listener.onCLick_fun(position,"",0)
-            }
-            holder.leavegroup_btn_1.setOnClickListener{
-                listener.onCLick_fun(position,"",1)
-            }
-            holder.leavegroup_btn_2.setOnClickListener{
-                listener.onCLick_fun(position,"",1)
-            }
-
+        holder.viewmore_btn_1.setOnClickListener{
+            listener.onClickGroups_fun(position,"",0, gID, gName, gImage)
         }
 
     }

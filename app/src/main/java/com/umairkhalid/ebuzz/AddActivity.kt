@@ -32,6 +32,7 @@ class AddActivity : AppCompatActivity() {
 
         post_btn.setOnClickListener{
             val intent = Intent(this, UploadPostActivity::class.java)
+            intent.putExtra("CATEGORY", "USER")
             startActivity(intent)
         }
 

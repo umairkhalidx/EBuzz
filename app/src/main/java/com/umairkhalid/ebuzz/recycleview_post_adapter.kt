@@ -1,5 +1,6 @@
 package com.umairkhalid.ebuzz
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,9 +8,11 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import android.widget.VideoView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class recycleview_post_adapter (val itemslist: ArrayList<recycleview_post_data>,private val listener: ClickListner)
     : RecyclerView.Adapter<recycleview_post_adapter.post_recycler_viewholder>()
@@ -57,17 +60,38 @@ class recycleview_post_adapter (val itemslist: ArrayList<recycleview_post_data>,
 
     override fun onBindViewHolder(holder: post_recycler_viewholder, position: Int) {
 
+        try {
+            Picasso.get().load(itemslist[position].user_image).into(holder.user_image)
+        } catch (e: Exception) {
+
+        }
+
+
 //        Glide.with(holder.itemView.context)
 //            .load(itemslist[position].img)
 //            .into(holder.display_pic)
 //        holder.message.setText(itemslist[position].message)
         holder.user_name.setText((itemslist[position].username))
+
         if(itemslist[position].post_type == 0 ){
             holder.post_image.visibility=View.GONE
             holder.post_video.visibility=View.GONE
             holder.post_text.visibility=View.VISIBLE
             holder.description.visibility=View.GONE
+            holder.post_text.setText(itemslist[position].post_text)
 
+        }else if (itemslist[position].post_type == 1){
+            holder.post_image.visibility=View.VISIBLE
+            holder.post_video.visibility=View.GONE
+            holder.post_text.visibility=View.GONE
+            holder.description.visibility=View.VISIBLE
+            holder.description.setText(itemslist[position].description)
+
+            try {
+                Picasso.get().load(itemslist[position].post_image).into(holder.post_image)
+            } catch (e: Exception) {
+
+            }
 
         }
 

@@ -242,6 +242,8 @@ class SignupActivity : AppCompatActivity() {
                     userRef.child(id).child("age").setValue(userData.age)
                     userRef.child(id).child("profiletype").setValue("Private")
                     userRef.child(id).child("category").setValue("Creator")
+                    userRef.child(id).child("picture").setValue("")
+                    userRef.child(id).child("cover").setValue("")
 
 
                     val new_email = userData.email.replace(".", ",")

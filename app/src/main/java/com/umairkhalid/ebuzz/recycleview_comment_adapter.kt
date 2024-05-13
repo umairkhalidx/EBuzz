@@ -44,6 +44,7 @@ class recycleview_comment_adapter (val itemslist: ArrayList<recycleview_comment_
 //            .load(itemslist[position].img)
 //            .into(holder.display_pic)
         holder.username.setText(itemslist[position].username)
+        holder.usercomment.setText(itemslist[position].comment)
 
     }
 }

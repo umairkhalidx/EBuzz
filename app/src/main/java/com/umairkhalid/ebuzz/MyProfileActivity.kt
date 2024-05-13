@@ -3,6 +3,7 @@ package com.umairkhalid.ebuzz
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,6 +27,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.squareup.picasso.Picasso
 
 class MyProfileActivity : AppCompatActivity(),ClickListner {
@@ -52,6 +55,9 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_profile)
+
+        Toast.makeText(this,"Loading...",Toast.LENGTH_LONG).show()
+
 
         current_layout = 1
 
@@ -106,7 +112,7 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
         }
 
         mypage_btn.setOnClickListener{
-            val intent = Intent(this, MyPageActivity::class.java)
+            val intent = Intent(this, PagesActivity::class.java)
             startActivity(intent)
         }
 
@@ -119,6 +125,45 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
             val intent = Intent(this, FriendsListActivity::class.java)
             startActivity(intent)
         }
+
+        if (!isNetworkAvailable()) {
+            Toast.makeText(this, "No Internet Connection", Toast.LENGTH_LONG).show()
+
+            val sharedPref = getSharedPreferences("MYPROFILE_PREF", Context.MODE_PRIVATE)
+            val storedUsername = sharedPref.getString("username", "")
+            username.text=storedUsername
+
+            val storedcity = sharedPref.getString("city", "")
+            val pic_url = sharedPref.getString("profile_pic", "").toString()
+            val cover_url = sharedPref.getString("cover_pic", "").toString()
+            username.text=storedUsername
+            province.text=storedcity
+
+            if (pic_url.length>10) {
+                Picasso.get().load(pic_url).into(user_img)
+            }
+            if (cover_url.length>10 ) {
+                Picasso.get().load(cover_url).into(cover_img)
+
+            }
+
+            val json = sharedPref.getString("PROFILE_FEED", "")
+            if(!(json.isNullOrEmpty())) {
+                val gson = Gson()
+                val type = object : TypeToken<ArrayList<recycleview_post_data>>() {}.type
+
+                val recyclerView : RecyclerView = findViewById(R.id.myprofile_recyclerview)
+                recyclerView.layoutManager = LinearLayoutManager(this,
+                    LinearLayoutManager.VERTICAL,
+                    true
+                )
+                val adapter_data_list: ArrayList<recycleview_post_data> = gson.fromJson(json, type)
+
+                val adapter = recycleview_post_adapter(adapter_data_list, this@MyProfileActivity)
+                recyclerView.adapter = adapter
+            }
+        }
+
 
         var database = FirebaseDatabase.getInstance()
         val my_ref = database.getReference("users")
@@ -149,6 +194,15 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
                         Picasso.get().load(cover_url).into(cover_img)
 
                     }
+
+                    val sharedPref = getSharedPreferences("MYPROFILE_PREF", Context.MODE_PRIVATE)
+                    val editor = sharedPref.edit()
+                    editor.putString("username", name)
+                    editor.putString("city",city)
+                    editor.putString("about",about)
+                    editor.putString("profile_pic",pic_url)
+                    editor.putString("cover_pic",cover_url)
+                    editor.apply()
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
@@ -177,7 +231,7 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
         val recyclerView : RecyclerView = findViewById(R.id.myprofile_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL,
-            false
+            true
         )
 
         var adapter_data_list : ArrayList<recycleview_post_data> = ArrayList()
@@ -198,7 +252,7 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
                     val photo = Snapshot.child("photo").getValue(String::class.java)
                     val video = Snapshot.child("video").getValue(String::class.java)
                     val time = Snapshot.child("time").getValue(String::class.java)
-                    val description_txt = Snapshot.child("text").getValue(String::class.java)
+                    val description_txt = Snapshot.child("description").getValue(String::class.java)
 
                     var postType = -1
                     if(type == "Text"){
@@ -213,17 +267,24 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
                     val usersRef = databaseUser.getReference("users")
 
                     usersRef.child(userID.toString()).addListenerForSingleValueEvent(object : ValueEventListener {
-                        override fun onDataChange(dataSnapshot: DataSnapshot) {
-                            if (dataSnapshot.exists()) {
-                                val userName = dataSnapshot.child("name").getValue(String::class.java)
-                                val userPicture = dataSnapshot.child("picture").getValue(String::class.java)
+                        override fun onDataChange(Snapshot: DataSnapshot) {
+                            if (Snapshot.exists()) {
+                                val userName = Snapshot.child("name").getValue(String::class.java)
+                                val userPicture = Snapshot.child("picture").getValue(String::class.java)
 
                                 val postData  = recycleview_post_data(userID,postID,userPicture,userName,photo,"",text,description_txt,postType,0)
                                 adapter_data_list.add(postData)
 
-                                // 3- Adapter
-                                val adapter = recycleview_post_adapter(adapter_data_list,this@MyProfileActivity)
+                                val adapter = recycleview_post_adapter(adapter_data_list, this@MyProfileActivity)
                                 recyclerView.adapter = adapter
+
+                                val gson = Gson()
+                                val json = gson.toJson(adapter_data_list)
+                                val sharedPref = getSharedPreferences("MYPROFILE_PREF", Context.MODE_PRIVATE)
+                                val editor = sharedPref.edit()
+                                editor.putString("PROFILE_FEED", json)
+                                editor.apply()
+
                             }
                         }
 
@@ -495,4 +556,12 @@ class MyProfileActivity : AppCompatActivity(),ClickListner {
         }
 
     }
+
+    private fun isNetworkAvailable(): Boolean {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected
+    }
+
 }

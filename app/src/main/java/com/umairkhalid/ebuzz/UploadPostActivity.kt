@@ -96,6 +96,7 @@ class UploadPostActivity : AppCompatActivity() {
                         post_layout.visibility=View.VISIBLE
                         upload_textview.visibility=View.VISIBLE
                         upload_imageview.visibility=View.GONE
+                        description.visibility=View.GONE
                         type = 1
 
 
@@ -104,6 +105,7 @@ class UploadPostActivity : AppCompatActivity() {
                         post_layout.visibility=View.VISIBLE
                         upload_textview.visibility=View.GONE
                         upload_imageview.visibility=View.VISIBLE
+                        description.visibility=View.VISIBLE
                         type= 2
                         // Button to take a photo
                         uploadCamera.setOnClickListener{
@@ -129,6 +131,7 @@ class UploadPostActivity : AppCompatActivity() {
                         post_layout.visibility=View.VISIBLE
                         upload_textview.visibility=View.GONE
                         upload_imageview.visibility=View.VISIBLE
+                        description.visibility=View.VISIBLE
                         type = 3
                     }
                 }
@@ -147,7 +150,13 @@ class UploadPostActivity : AppCompatActivity() {
                 val database = FirebaseDatabase.getInstance()
                 val curr = mAuth.currentUser
                 val id= curr?.uid.toString()
+                val posttype = intent.getStringExtra("CATEGORY")
                 var postRef = database.getReference("users").child(id).child("posts")
+
+                if(posttype == "PAGE"){
+                    val page_name = intent.getStringExtra("PAGENAME").toString()
+                    postRef = database.getReference("pages").child(page_name).child("posts")
+                }
 
                 // Get current date and time
                 val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
@@ -157,7 +166,7 @@ class UploadPostActivity : AppCompatActivity() {
 
                 val postKey = postRef.push().key.toString()
                 val content_txt = upload_textview.text.toString().trim()
-                val description_txt = upload_textview.text.toString().trim()
+                val description_txt = description.text.toString().trim()
 
                 postRef.child(postKey).setValue(null)
                 postRef.child(postKey).child("userID").setValue(id)
@@ -188,6 +197,12 @@ class UploadPostActivity : AppCompatActivity() {
                     val id= curr?.uid.toString()
                     var postRef = database.getReference("users").child(id).child("posts")
 
+                    val posttype = intent.getStringExtra("CATEGORY")
+                    if(posttype == "PAGE"){
+                        val page_name = intent.getStringExtra("PAGENAME").toString()
+                        postRef = database.getReference("pages").child(page_name).child("posts")
+                    }
+
                     // Get current date and time
                     val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
                     val currentTime = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
@@ -196,7 +211,7 @@ class UploadPostActivity : AppCompatActivity() {
 
                     val postKey = postRef.push().key.toString()
                     val imageURL = imageUri.toString()
-                    val description_txt = upload_textview.text.toString().trim()
+                    val description_txt = description.text.toString().trim()
 
 
                     postRef.child(postKey).setValue(null)
@@ -208,7 +223,6 @@ class UploadPostActivity : AppCompatActivity() {
                     postRef.child(postKey).child("video").setValue("")
                     postRef.child(postKey).child("time").setValue(dateTime)
                     postRef.child(postKey).child("description").setValue(description_txt)
-
 
 
                     val storageRef = FirebaseStorage.getInstance().reference
@@ -224,7 +238,12 @@ class UploadPostActivity : AppCompatActivity() {
                             // Save download URL to Firebase Realtime Database
                             val image_url = uri.toString()
                             val database = FirebaseDatabase.getInstance()
-                            val myRef = database.getReference("users/$id/posts/$postKey/photo")
+                            var myRef = database.getReference("users/$id/posts/$postKey/photo")
+
+                            if(posttype == "PAGE"){
+                                val page_name = intent.getStringExtra("PAGENAME").toString()
+                                myRef = database.getReference("pages/$page_name/posts/$postKey/photo")
+                            }
 
                             myRef.setValue(image_url).addOnSuccessListener {
                                 Toast.makeText(this@UploadPostActivity,"Post Uploaded Successfully", Toast.LENGTH_LONG).show()

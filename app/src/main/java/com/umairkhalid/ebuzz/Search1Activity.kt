@@ -37,42 +37,52 @@ class Search1Activity : AppCompatActivity() {
 
         group_btn.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "GROUP")
             startActivity(intent)
         }
         pages_btn.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "PAGE")
             startActivity(intent)
         }
         people_btn.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "PEOPLE")
+
             startActivity(intent)
         }
 
 
         group_img.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "GROUP")
             startActivity(intent)
         }
         pages_img.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "PAGE")
             startActivity(intent)
         }
         people_img.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "PEOPLE")
             startActivity(intent)
         }
 
 
         group_txt.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "GROUP")
             startActivity(intent)
         }
         pages_txt.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "PAGE")
             startActivity(intent)
         }
         people_txt.setOnClickListener{
             val intent = Intent(this, Search2Activity::class.java)
+            intent.putExtra("TYPE", "PEOPLE")
             startActivity(intent)
         }
 

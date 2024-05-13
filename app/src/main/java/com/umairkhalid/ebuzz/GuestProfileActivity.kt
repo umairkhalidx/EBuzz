@@ -40,5 +40,12 @@ class GuestProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        logout_btn.setOnClickListener{
+            finish()
+            finishAffinity();
+            val nextActivityIntent = Intent(this, LoginActivity::class.java)
+            startActivity(nextActivityIntent)
+        }
+
     }
 }

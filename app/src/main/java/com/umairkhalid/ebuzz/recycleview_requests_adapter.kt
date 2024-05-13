@@ -3,20 +3,27 @@ package com.umairkhalid.ebuzz
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
-class recycleview_requests_adapter (val itemslist: ArrayList<recycleview_requests_data>)
+class recycleview_requests_adapter (val itemslist: ArrayList<recycleview_requests_data>,private val listener: ClickListner)
     : RecyclerView.Adapter<recycleview_requests_adapter.requests_recycler_viewholder>()
 {
     inner class requests_recycler_viewholder(itemView: View) : RecyclerView.ViewHolder(itemView){
         lateinit var user_img : ImageView
         lateinit var username : TextView
+        lateinit var acceptBtn : Button
+        lateinit var declineBtn : Button
+
 
         init {
             user_img= itemView.findViewById(R.id.item_user_img)
             username= itemView.findViewById(R.id.item_username)
+            acceptBtn = itemView.findViewById(R.id.accept_btn)
+            declineBtn = itemView.findViewById(R.id.decline_btn)
 
         }
 
@@ -38,7 +45,19 @@ class recycleview_requests_adapter (val itemslist: ArrayList<recycleview_request
 //        Glide.with(holder.itemView.context)
 //            .load(itemslist[position].img)
 //            .into(holder.display_pic)
+        try {
+            Picasso.get().load(itemslist[position].img).into(holder.user_img)
+        } catch (e: Exception) {
+
+        }
         holder.username.setText(itemslist[position].username)
+
+        holder.acceptBtn.setOnClickListener{
+            listener.onCLick_fun(position,itemslist[position].id.toString(),1)
+        }
+        holder.declineBtn.setOnClickListener{
+            listener.onCLick_fun(position,itemslist[position].id.toString(),2)
+        }
 
     }
 }
