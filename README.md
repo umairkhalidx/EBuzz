@@ -8,10 +8,12 @@ Our primary target audience includes people whose daily routine include the use 
 ## Application Features
 1.	User Registration and Authentication.
 2.	User Profiles and Data Management.
-3.	Friend/Follow System.
-4.	Post Creation and Sharing.
-5.	User Feed with Personalized Content.
-6.	Comments and Like System.
-7.	Search Functionality.
-8.	Groups and Communities.
-9.	Timely Notifications
+3.	Personalized User Feed
+4.	Friend/Follow System.
+5.	Post Creation and Sharing.
+7.	Comments and Like System.
+8.	Search Functionality.
+9.	Groups and Communities.
+10.	Timely Notifications.
+11.	Guest Mode.
+12.	Offline Functionality.
