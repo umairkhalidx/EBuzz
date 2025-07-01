@@ -17,3 +17,35 @@ Our primary target audience includes people whose daily routine include the use 
 10.	Timely Notifications.
 11.	Guest Mode.
 12.	Offline Functionality.
+
+---
+
+## 📱 Sample UI Screens  
+<p align="center">
+  <img src="User Interface/Splash.jpg" alt="Splash Screen" width="30%" />
+  <img src="User Interface/Login.jpg" alt="Login Screen" width="30%" />
+  <img src="User Interface/Signup.jpg" alt="Signup Screen " width="30%" />
+</p>
+<p align="center">
+  <img src="User Interface/Home%20Page.jpg" alt="Home Screen" width="30%" />
+  <img src="User Interface/My%20Profile.jpg" alt="My Profile Screen" width="30%" />
+  <img src="User Interface/Edit%20Profile.jpg" alt="Edit Profile Screen" width="30%" />
+</p>
+<p align="center">
+  <img src="User Interface/Add%20Now.jpg" alt="Add Now Screen" width="30%" />
+  <img src="User Interface/Upload%20Photo.jpg" alt="Upload Photo Screen" width="30%" />
+  <img src="User Interface/Create%20Page.jpg" alt="Create Page Screen" width="30%" />
+</p>
+<p align="center">
+  <img src="User Interface/Search%20Screen.jpg" alt="Search Screen" width="30%" />
+  <img src="User Interface/Notifications.jpg" alt="Notifications Screen" width="30%" />
+  <img src="User Interface/Chat.jpg" alt="Chat Screen" width="30%" />
+</p>
+<p align="center">
+  <img src="User Interface/User%20Settings.jpg" alt="User Settings Screen" width="30%" />
+  <img src="User Interface/Submit%20Feedback.jpg" alt="Submit Feedback Screen" width="30%" />
+  <img src="User Interface/Friend%20Requests.jpg" alt="Friend Requests Screen" width="30%" />
+</p>
+
+---
+
