@@ -24,7 +24,7 @@ Our primary target audience includes people whose daily routine include the use 
 <p align="center">
   <img src="User Interface/Splash.jpg" alt="Splash Screen" width="30%" />
   <img src="User Interface/Login.jpg" alt="Login Screen" width="30%" />
-  <img src="User Interface/Signup.jpg" alt="Signup Screen " width="30%" />
+  <img src="User Interface/Sign%20Up.jpg" alt="Signup Screen " width="30%" />
 </p>
 <p align="center">
   <img src="User Interface/Home%20Page.jpg" alt="Home Screen" width="30%" />
